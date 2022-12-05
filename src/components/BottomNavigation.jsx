@@ -91,7 +91,7 @@ export default function BottomNavigation() {
 
         <BottomNavigationAction
           icon={
-            <InfoIcon
+            <LocalLibraryIcon
               sx={{
                 width: "30px",
                 height: "30px",
@@ -106,7 +106,7 @@ export default function BottomNavigation() {
 
         <BottomNavigationAction
           icon={
-            <AccountCircleIcon
+            <InfoIcon
               sx={{
                 width: "30px",
                 height: "30px",
