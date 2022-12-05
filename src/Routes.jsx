@@ -50,8 +50,8 @@ const createRoutes = () =>
           </App>
         }
       >
-        <Route path="/" element={<Navigate to="/artem/home" />} />
-        <Route path="/artem/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/english-bookstore/home" element={<Home />} />
         <Route
           path="bids"
           element={

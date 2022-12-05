@@ -9,7 +9,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import createRoutes from "./Routes";
 import { CssVarsProvider } from "@mui/joy/styles";
 
-const router = createBrowserRouter(createRoutes(), { basename: "/artem" });
+const router = createBrowserRouter(createRoutes(), { basename: "/english-bookstore" });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

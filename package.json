@@ -1,5 +1,5 @@
 {
-  "name": "artem-frontend",
+  "name": "english-bookstore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -69,5 +69,5 @@
     "serve": "^14.0.1",
     "webpack-lighthouse-plugin": "^1.0.9"
   },
-  "homepage": "https://dimitur2204.github.io/artem"
+  "homepage": "https://dimitur2204.github.io/english-bookstore"
 }
