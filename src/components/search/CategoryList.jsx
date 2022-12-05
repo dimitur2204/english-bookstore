@@ -6,24 +6,28 @@ import CategoryCard from "./CategoryCard";
 // listing images of cagetories for our search feature
 const categories = [
   {
-    title: "paintings",
+    title: "Drama",
     imageIndex: 4,
   },
   {
-    title: "clay",
+    title: "Kids",
     imageIndex: 3,
   },
   {
-    title: "woodwork",
+    title: "Education",
     imageIndex: 2,
   },
   {
-    title: "print",
+    title: "Fiction",
     imageIndex: 1,
   },
   {
-    title: "photography",
+    title: "Non-fiction",
     imageIndex: 6,
+  },
+  {
+    title: "Others",
+    imageIndex: 7,
   },
 ];
 // defining the categories to get the correct background image for them

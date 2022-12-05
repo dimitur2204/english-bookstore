@@ -8,6 +8,7 @@ import theme from "../theme";
 import { Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+
 export default function LandingPage() {
   const navigate = useNavigate();
   const navigateHome = () => {
@@ -18,16 +19,13 @@ export default function LandingPage() {
       style={{
         height: "100vh",
         width: "100%",
-        backgroundColor: theme.palette.background.landing,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/background-welcome.png)`,
         position: "relative",
         overflow: "hidden",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
-      <img
-        src={`${process.env.PUBLIC_URL}/blob.svg`}
-        style={{ position: "absolute", top: "-550px", left: "100px" }}
-        alt=""
-      ></img>
       <div
         style={{
           display: "flex",
@@ -39,25 +37,25 @@ export default function LandingPage() {
           paddingTop: "50%",
         }}
       >
-        <img alt="White logo showing a capital A" src={`${process.env.PUBLIC_URL}/logo-white.png`}></img>
+        <img alt="logo" style={{width:"80%"}} src={`${process.env.PUBLIC_URL}/logo.webp`}></img>
         <Typography variant="h2" style={{ color: "white", fontSize: "2.7rem" }}>
-          Hello!
+          Welcome!
         </Typography>
         <Typography style={{ textAlign: "center", color: "white" }}>
-          Welcome to Artem Gallery! <br></br>Are you an artist or an admirer?
-          Start exploring and find inspiration in the exhibitions.
+        Are you a book enthusiast? What about puzzles? Do you also care about sustainable shopping? Then you've come to the right place!
         </Typography>
         <Button
           variant="outlined"
           disableElevation
           onClick={navigateHome}
           style={{
-            maxWidth: "150px",
-            backgroundColor: "white",
-            marginTop: "15px",
+            width: "200px",
+            backgroundColor: theme.palette.background.landing,
+            marginTop: "25px",
+            color: "white",
           }}
         >
-          Continue
+          Get started
         </Button>
       </div>
     </div>
