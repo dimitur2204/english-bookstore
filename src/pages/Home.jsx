@@ -24,6 +24,7 @@ function WishlistCTA() {
         backgroundColor: theme.palette.primary.main,
         borderRadius: "29px",
         p: 4,
+        mb: `calc(72px + ${theme.spacing(2)})`,
       }}
     >
       <Typography fontWeight="bold" color={theme.palette.common.white} mb={1}>
