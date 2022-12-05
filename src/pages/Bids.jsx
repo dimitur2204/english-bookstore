@@ -7,7 +7,6 @@ Also renders the tabs component that allows the user to switch between the diffe
 */
 
 import React from "react";
-import Header from "../components/Header";
 import { Tab, TabList, Tabs, TabPanel } from "@mui/joy";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -20,7 +19,6 @@ function Bids() {
   const [index, setIndex] = React.useState(0);
   return (
     <div>
-      <Header text="Your Actions" />
       <Container>
       <Tabs
         aria-label="Soft tabs"
@@ -35,7 +33,7 @@ function Bids() {
             color={index === 0 ? "primary" : "neutral"}
             style={{color: index === 0 && "white"}}
           >
-            Bids
+            Books
           </Tab>
           <Tab
             sx={{borderRadius: 1000}}
@@ -43,7 +41,7 @@ function Bids() {
             color={index === 1 ? "primary" : "neutral"}
             style={{color: index === 1 && "white"}}
           >
-            Watched
+           Miscellaneous
           </Tab>
           </TabList>
           <TabPanel value={0}>
@@ -57,15 +55,6 @@ function Bids() {
                 />
                 <Typography>
                     {item.title}
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2} fontSize="1rem">
-                    Current bid
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="1rem" color={theme.palette.primary.main}>
-                    140$
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="0.8rem">
-                    5 hours left
                 </Typography>
               </ImageListItem>
             ))}
