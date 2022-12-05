@@ -23,7 +23,6 @@ const theme = createTheme({
   palette: {
     background: {
       default: "#F7F6F5",
-      paper: "#F7F6F5",
       landing: '#C59444',
       icon: "rgba(0, 0, 0, 0.8)",
     },
