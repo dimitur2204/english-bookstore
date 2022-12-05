@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Button, ImageList, ImageListItem, Typography } from '@mui/material'
 import theme from '../theme'
 import { itemData1, itemData2 } from './booksList'
+import BookDetails from "./BookDetails";
 
 function BooksList() {
     const [all, setAll] = React.useState(false)
@@ -48,6 +49,8 @@ function BooksList() {
               </ImageListItem>
             ))}
           </ImageList>
+
+      {/*<BookDetails book={{image: `${process.env.PUBLIC_URL}/cover-1.jpg`, title: 'Curious George', author: 'Kristian Malamov', price: 65, genres: []}}/>*/}
     </>
 
   )
