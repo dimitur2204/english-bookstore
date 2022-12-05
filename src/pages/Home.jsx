@@ -19,7 +19,7 @@ import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
 
 function FeaturedBook(){
 return (
-  <>
+  <Box my={2}>
     <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
       Our choice
     </Typography>
@@ -48,7 +48,7 @@ return (
         <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>240 dkk</Typography>
       </Grid2>
     </Grid2>
-  </>
+  </Box>
 
 )
 }
