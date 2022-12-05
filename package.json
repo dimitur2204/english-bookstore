@@ -1,0 +1,73 @@
+{
+  "name": "artem-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/joy": "^5.0.0-alpha.50",
+    "@mui/material": "^5.10.9",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "firebase": "^9.12.1",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.8",
+    "swiper": "^8.4.4",
+    "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "serve": "serve ./build",
+    "build:audit": "export LIGHTHOUSE_AUDIT=true; npm run serve & npm run build; kill -9 $!; kill -9 `lsof -t -i:5000`"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "customize-cra": "^1.0.0",
+    "gh-pages": "^4.0.0",
+    "react-app-rewired": "^2.2.1",
+    "serve": "^14.0.1",
+    "webpack-lighthouse-plugin": "^1.0.9"
+  },
+  "homepage": "https://dimitur2204.github.io/artem"
+}

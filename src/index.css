@@ -1,0 +1,42 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "work-sans", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f6f5;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "quiche-sans", "serif";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* sliders in Post Details page*/
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+#root{
+  max-width: 500px;
+  margin: 0 auto;
+}
