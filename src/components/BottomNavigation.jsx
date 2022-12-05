@@ -18,6 +18,12 @@ import firebaseApp from "../firebase-config";
 import { AutoAwesomeMotion } from "@mui/icons-material";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import theme from "../theme";
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import InfoIcon from '@mui/icons-material/Info';
+
 
 const auth = getAuth(firebaseApp);
 
@@ -40,7 +46,7 @@ export default function BottomNavigation() {
       >
         <BottomNavigationAction
           icon={
-            <AccountBalanceIcon
+            <HomeIcon
               sx={{
                 width: "30px",
                 height: "30px",
@@ -55,7 +61,7 @@ export default function BottomNavigation() {
 
         <BottomNavigationAction
           icon={
-            <BalanceIcon
+            <SearchIcon
               sx={{
                 width: "30px",
                 height: "30px",
@@ -70,7 +76,7 @@ export default function BottomNavigation() {
 
         <BottomNavigationAction
           icon={
-            <AddCircleOutlined
+            <AutoFixHighIcon
               sx={{
                 width: "30px",
                 height: "30px",
@@ -85,7 +91,7 @@ export default function BottomNavigation() {
 
         <BottomNavigationAction
           icon={
-            <AutoAwesomeMotion
+            <InfoIcon
               sx={{
                 width: "30px",
                 height: "30px",
