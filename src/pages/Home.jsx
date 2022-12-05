@@ -21,7 +21,7 @@ export default function Home() {
         withSearch
         sx={{ marginBottom: theme.spacing(-13) }}
       />
-    <img src="woman-reading.svg" alt="A woman reading a book" style={{width: "120vw", marginLeft: "-110px"}}/>
+    <img src={`${process.env.PUBLIC_URL}/woman-reading.svg`} alt="A woman reading a book" style={{width: "120vw", marginLeft: "-110px"}}/>
       <BooksList />
     </Container>
   );
