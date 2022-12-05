@@ -8,9 +8,7 @@ function BooksList() {
   return (
     <>
     <Box display="flex" justifyContent='space-between'>
-    <Typography variant="h5" fontFamily='serif'>
-        This week's
-    </Typography>
+    <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>This week's</Typography>
     <Button onClick={() => setAll(!all)} variant="text">See {all ? 'less' : 'all'}</Button>
     </Box>
     <ImageList cols={3} gap={theme.spacing(2)}>
@@ -46,9 +44,6 @@ function BooksList() {
                 </Typography>
                 <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
                     George Orwell
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="0.8rem">
-                    5 hours left
                 </Typography>
               </ImageListItem>
             ))}
