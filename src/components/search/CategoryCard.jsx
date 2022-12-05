@@ -22,7 +22,7 @@ function CategoryCard({ title, imageIndex, url }) {
           backgroundImage: `url(${process.env.PUBLIC_URL}/category-${imageIndex}.jpg)`,
           position: "relative",
           zIndex: 0,
-          width: "100%",
+          width: "42%",
           height: 115,
           borderRadius: 5,
         }}
@@ -42,7 +42,6 @@ function CategoryCard({ title, imageIndex, url }) {
         <Typography
           variant="h3"
           fontFamily="quiche-sans"
-          textTransform="uppercase"
           fontSize="2rem"
           fontWeight="500"
           sx={{

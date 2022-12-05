@@ -23,11 +23,11 @@ const categories = [
   },
   {
     title: "Non-fiction",
-    imageIndex: 6,
+    imageIndex: 5,
   },
   {
     title: "Others",
-    imageIndex: 7,
+    imageIndex: 6,
   },
 ];
 // defining the categories to get the correct background image for them

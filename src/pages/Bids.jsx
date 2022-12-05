@@ -12,14 +12,41 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box, InputAdornment,Input, IconButton,} from "@mui/material";
+import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
 
 // Bidding page that is made up of Header + ButtonTabs component
 function Bids() {
-  const [index, setIndex] = React.useState(0);
+  const [value, setValue, index, setIndex] = React.useState(0);
   return (
     <div>
       <Container>
+      <Box
+        sx={{ mt: "10px", display: "flex", justifyContent: "space-between" }}
+      >
+        <IconButton sx={{ pl: 0 }} color="primary">
+          <CloseIcon />
+        </IconButton>
+        {/* white box for typing what users search for */}
+        <Input
+          endAdornment={
+            <InputAdornment position="end">
+              {value ? (
+                <IconButton onClick={() => setValue("")}>
+                  <CloseIcon />
+                </IconButton>
+              ) : null}
+            </InputAdornment>
+          }
+          placeholder="Type title or author"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          autoFocus
+        />
+        <IconButton sx={{ pl: 0 }} color="primary">
+          <SearchIcon />
+        </IconButton>
+      </Box>
       <Tabs
         aria-label="Soft tabs"
         value={index}
@@ -71,15 +98,6 @@ function Bids() {
                 />
                 <Typography>
                     {item.title}
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2} fontSize="1rem">
-                    Current bid
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="1rem" color={theme.palette.primary.main}>
-                    70$
-                </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="0.8rem">
-                    6 hours left
                 </Typography>
               </ImageListItem>
             ))}
