@@ -26,7 +26,7 @@ import Create from "./pages/Create";
 import Saved from "./pages/Saved";
 import PostDetails from "./pages/PostDetails";
 import Landing from "./pages/Landing";
-import Category from "./pages/Category";
+import Home from "./pages/Home";
 
 const auth = getAuth(firebaseApp);
 
@@ -50,8 +50,8 @@ const createRoutes = () =>
           </App>
         }
       >
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/artem/home" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/artem/home" />} />
+        <Route path="/artem/home" element={<Home />} />
         <Route
           path="bids"
           element={
@@ -86,7 +86,7 @@ const createRoutes = () =>
         />
         <Route path="search" element={<Search />} />
         <Route path="post/:id" element={<PostDetails />} />
-        <Route path=":category" element={<Category />} />
+        <Route path=":category" element={<Home />} />
       </Route>
       <Route path="landing" element={<Landing />} />
       <Route path="login" element={<Login />} />

@@ -11,7 +11,7 @@ import Header from "../components/Header";
 import { Tab, TabList, Tabs, TabPanel } from "@mui/joy";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { itemData1, itemData2 } from "../components/bidsList";
+import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
 import { Container, Typography } from "@mui/material";
 

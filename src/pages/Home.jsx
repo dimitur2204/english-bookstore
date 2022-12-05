@@ -11,20 +11,18 @@ It also works as a home page that renders the posts in all categories
 import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
-import { useParams } from "react-router-dom";
-import { capitalize } from "lodash";
-import BooksList from "../components/BooksList";
+import BooksList from "../components/BooksList.jsx";
+import { Container } from "@mui/material";
 
 export default function Home() {
-  const { category } = useParams();
   return (
-    <>
+    <Container>
       <Header
         withSearch
         sx={{ marginBottom: theme.spacing(-13) }}
       />
     <img src="woman-reading.svg" alt="A woman reading a book" style={{width: "120vw", marginLeft: "-110px"}}/>
       <BooksList />
-    </>
+    </Container>
   );
 }
