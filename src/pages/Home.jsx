@@ -12,11 +12,46 @@ import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
 import BooksList from "../components/BooksList.jsx";
-import { Box, Container, IconButton, Paper, Typography } from "@mui/material";
+import { Box, Container, IconButton, Paper, Typography, Unstable_Grid2 as Grid2  } from "@mui/material";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
-import { East } from "@mui/icons-material";
+import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
 
+function FeaturedBook(){
+return (
+  <>
+    <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
+      Our choice
+    </Typography>
+    <Grid2 container spacing={2}>
+      <Grid2 xs={6}>
+      <img src={`${process.env.PUBLIC_URL}/cover-1.jpg`} style={{width: '100%'}} alt="featured book" />
+      </Grid2>
+      <Grid2 xs={6}>
+        <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>1984</Typography>
+        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
+          George Orwell
+        </Typography>
+        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
+        12 people wish for that
+        </Typography>
+        <Box>
+          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
+          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
+          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
+          <StarHalf fontSize="medium" sx={{color: theme.palette.primary.main}}/>
+          <StarBorder fontSize="medium" sx={{color: theme.palette.primary.main}}/>
+        </Box>
+        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
+        Rated by <a style={{color: 'rgba(0,0,0,0.5)'}} href="https://www.goodreads.com/">GoodReads</a>
+        </Typography>
+        <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>240 dkk</Typography>
+      </Grid2>
+    </Grid2>
+  </>
+
+)
+}
 function WishlistCTA() {
   return (
     <Paper
@@ -69,6 +104,7 @@ export default function Home() {
         alt="A woman reading a book"
         style={{ width: "120vw", marginLeft: "-110px" }}
       />
+      <FeaturedBook/>
       <BooksList />
       <WishlistCTA />
     </Container>

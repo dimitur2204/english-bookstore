@@ -47,9 +47,6 @@ function BooksList() {
                 <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
                     George Orwell
                 </Typography>
-                <Typography fontWeight="light" lineHeight={1.2}  fontSize="0.8rem">
-                    5 hours left
-                </Typography>
               </ImageListItem>
             ))}
           </ImageList>
