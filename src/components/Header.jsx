@@ -31,6 +31,7 @@ export default function Header({
         my: theme.spacing(1),
         alignItems: "center",
         padding: 0,
+        margin:"2rem",
         ...sx,
       }}
       as="header"
