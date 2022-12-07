@@ -30,10 +30,7 @@ export default function Header({
         justifyContent: "space-between",
         my: theme.spacing(1),
         alignItems: "center",
-<<<<<<< Updated upstream
-=======
         margin: "2rem",
->>>>>>> Stashed changes
         padding: 1,
         ...sx,
       }}
