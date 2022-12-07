@@ -12,45 +12,95 @@ import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
 import BooksList from "../components/BooksList.jsx";
-import { Box, Container, IconButton, Paper, Typography, Unstable_Grid2 as Grid2  } from "@mui/material";
+import {
+  Box,
+  Container,
+  IconButton,
+  Paper,
+  Typography,
+  Unstable_Grid2 as Grid2,
+} from "@mui/material";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
 
-function FeaturedBook(){
-return (
-  <Box my={2}>
-    <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
-      Our choice
-    </Typography>
-    <Grid2 container spacing={2}>
-      <Grid2 xs={6}>
-      <img src={`${process.env.PUBLIC_URL}/cover-1.jpg`} style={{width: '100%'}} alt="featured book" />
+function FeaturedBook() {
+  return (
+    <Box my={2}>
+      <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
+        Our choice
+      </Typography>
+      <Grid2 container spacing={2}>
+        <Grid2 xs={6}>
+          <img
+            src={`${process.env.PUBLIC_URL}/cover-1.jpg`}
+            style={{ width: "100%" }}
+            alt="featured book"
+          />
+        </Grid2>
+        <Grid2 xs={6}>
+          <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>
+            1984
+          </Typography>
+          <Typography
+            fontWeight="light"
+            color="rgba(0,0,0,0.5)"
+            lineHeight={1.2}
+            fontSize="1rem"
+          >
+            George Orwell
+          </Typography>
+          <Typography
+            fontWeight="light"
+            color="rgba(0,0,0,0.5)"
+            lineHeight={1.2}
+            fontSize="1rem"
+          >
+            12 people wish for that
+          </Typography>
+          <Box>
+            <Star
+              fontSize="medium"
+              sx={{ color: theme.palette.primary.main }}
+            />
+            <Star
+              fontSize="medium"
+              sx={{ color: theme.palette.primary.main }}
+            />
+            <Star
+              fontSize="medium"
+              sx={{ color: theme.palette.primary.main }}
+            />
+            <StarHalf
+              fontSize="medium"
+              sx={{ color: theme.palette.primary.main }}
+            />
+            <StarBorder
+              fontSize="medium"
+              sx={{ color: theme.palette.primary.main }}
+            />
+          </Box>
+          <Typography
+            fontWeight="light"
+            color="rgba(0,0,0,0.5)"
+            lineHeight={1.2}
+            fontSize="1rem"
+          >
+            Rated by{" "}
+            <a
+              style={{ color: "rgba(0,0,0,0.5)" }}
+              href="https://www.goodreads.com/"
+            >
+              GoodReads
+            </a>
+          </Typography>
+          <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>
+            240 dkk
+          </Typography>
+        </Grid2>
       </Grid2>
-      <Grid2 xs={6}>
-        <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>1984</Typography>
-        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
-          George Orwell
-        </Typography>
-        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
-        12 people wish for that
-        </Typography>
-        <Box>
-          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
-          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
-          <Star fontSize="medium" sx={{color: theme.palette.primary.main}}/>
-          <StarHalf fontSize="medium" sx={{color: theme.palette.primary.main}}/>
-          <StarBorder fontSize="medium" sx={{color: theme.palette.primary.main}}/>
-        </Box>
-        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem">
-        Rated by <a style={{color: 'rgba(0,0,0,0.5)'}} href="https://www.goodreads.com/">GoodReads</a>
-        </Typography>
-        <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>240 dkk</Typography>
-      </Grid2>
-    </Grid2>
-  </Box>
-
-)
+    </Box>
+  );
 }
 function WishlistCTA() {
   return (
@@ -69,14 +119,18 @@ function WishlistCTA() {
       <Typography color="rgba(255,255,255,0.8)" mb={3}>
         With our{" "}
         <Link style={{ color: "rgba(255,255,255,0.8)" }}>wishlist</Link> you can
-        make it happen
+        wish for a book that you want us to get on the shelves
       </Typography>
       <Box display="flex" justifyContent="space-between">
         <Box sx={{ textAlign: "center" }}>
           <Typography color={theme.palette.common.white} fontWeight="bold">
-            256
+            19
           </Typography>
-          <Typography color={theme.palette.common.white} fontWeight="light" fontSize="1rem">
+          <Typography
+            color={theme.palette.common.white}
+            fontWeight="light"
+            fontSize="1rem"
+          >
             Wishers for now
           </Typography>
         </Box>
@@ -84,12 +138,16 @@ function WishlistCTA() {
           <Typography color={theme.palette.common.white} fontWeight="bold">
             43
           </Typography>
-          <Typography color={theme.palette.common.white} fontWeight="light" fontSize="1rem">
+          <Typography
+            color={theme.palette.common.white}
+            fontWeight="light"
+            fontSize="1rem"
+          >
             Wished books
           </Typography>
         </Box>
         <IconButton>
-          <East sx={{fill: theme.palette.common.white}}/>
+          <East sx={{ fill: theme.palette.common.white }} />
         </IconButton>
       </Box>
     </Paper>
@@ -104,7 +162,7 @@ export default function Home() {
         alt="A woman reading a book"
         style={{ width: "120vw", marginLeft: "-110px" }}
       />
-      <FeaturedBook/>
+      <FeaturedBook />
       <BooksList />
       <WishlistCTA />
     </Container>

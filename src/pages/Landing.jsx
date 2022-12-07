@@ -8,7 +8,6 @@ import theme from "../theme";
 import { Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-
 export default function LandingPage() {
   const navigate = useNavigate();
   const navigateHome = () => {
@@ -37,12 +36,17 @@ export default function LandingPage() {
           paddingTop: "50%",
         }}
       >
-        <img alt="logo" style={{width:"80%"}} src={`${process.env.PUBLIC_URL}/logo.webp`}></img>
+        <img
+          alt="logo"
+          style={{ width: "80%" }}
+          src={`${process.env.PUBLIC_URL}/logo.webp`}
+        ></img>
         <Typography variant="h2" style={{ color: "white", fontSize: "2.7rem" }}>
           Welcome!
         </Typography>
         <Typography style={{ textAlign: "center", color: "white" }}>
-        Are you a book enthusiast? What about puzzles? Do you also care about sustainable shopping? Then you've come to the right place!
+          Are you a book enthusiast? What about puzzles? Do you also care about
+          sustainable shopping? Then you've come to the right place!
         </Typography>
         <Button
           variant="outlined"
@@ -55,7 +59,7 @@ export default function LandingPage() {
             color: "white",
           }}
         >
-          Get started
+          Start Discovering
         </Button>
       </div>
     </div>
