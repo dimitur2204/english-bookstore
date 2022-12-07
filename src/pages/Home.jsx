@@ -160,7 +160,7 @@ export default function Home() {
       <img
         src={`${process.env.PUBLIC_URL}/woman-reading.svg`}
         alt="A woman reading a book"
-        style={{ width: "130vw", marginLeft: "-110px", marginTop:"-150px" }}
+        style={{ width: "130vw", marginLeft: "-110px", marginTop:"30px" }}
       />
       <FeaturedBook />
       <BooksList />
