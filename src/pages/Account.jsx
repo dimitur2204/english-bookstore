@@ -1,10 +1,3 @@
-/*
-Dimitar Nizamov
-
-The main account page that renders when you access /account,
-Displays the user's account information and a follow button
-Also renders a list with the user's posts
-*/
 import { Avatar, Button, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
