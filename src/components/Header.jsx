@@ -10,7 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { IconButton, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountMenu from "./account/AccountMenu";
 import { Close } from "@mui/icons-material";
 import BackButton from "./global/BackButton";
 import theme from "../theme";
@@ -18,7 +17,6 @@ import theme from "../theme";
 export default function Header({
   text,
   withSearch,
-  withAccountOptions,
   withXButton,
   withBackButton,
   sx,
@@ -42,7 +40,6 @@ export default function Header({
       <Typography variant="h1" sx={{ marginTop: theme.spacing(1) }}>
         {titleArray?.length === 2 ? <>{titleArray[0]} {' '} <span style={{color: theme.palette.primary.main}}>{titleArray[1]}</span></> : text}
       </Typography>
-      {withAccountOptions ? <AccountMenu /> : null}
       {withSearch ? (
         <Link to="/search">
           <IconButton size="large" aria-label="Search">

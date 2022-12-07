@@ -6,7 +6,7 @@ It uses the Material UI createTheme function to create the theme
 We have defined the global styles for our app here
 */
 import { createTheme, experimental_extendTheme } from "@mui/material";
-import { amber, grey } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import { extendTheme as extendJoyTheme } from "@mui/joy/styles";
 
 const bookstoreMain = {
@@ -17,6 +17,13 @@ const bookstoreMain = {
   400: "#e7a367",
   500: '#C59444',
   600: "#b28a3f",
+  700: "#8d6f35",
+  800: "#69552b",
+  900: "#453b21",
+  A100: "#ffffff",
+  A200: "#ffffff",
+  A400: "#ffffff",
+  A700: "#ffffff",
 }
 // theme.js allows us to change the colors/font/sizes of various components in one go
 const theme = createTheme({
@@ -97,7 +104,8 @@ export const joyTheme = extendJoyTheme({
     light: {
       palette: {
         primary: {
-          ...amber,
+          ...bookstoreMain,
+          ...bookstoreMain,
           solidColor: "var(--mui-palette-primary-contrastText)",
           solidBg: "var(--mui-palette-primary-main)",
           solidHoverBg: "var(--mui-palette-primary-dark)",

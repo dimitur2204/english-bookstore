@@ -10,13 +10,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import BottomNavigationMUI from "@mui/material/BottomNavigation";
 import Paper from "@mui/material/Paper";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import BalanceIcon from "@mui/icons-material/Balance";
-import AddCircleOutlined from "@mui/icons-material/AddCircleOutlined";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { getAuth } from "firebase/auth";
 import firebaseApp from "../firebase-config";
-import { AutoAwesomeMotion } from "@mui/icons-material";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import theme from "../theme";
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
@@ -66,12 +61,12 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("bids")?.pattern.end && theme.palette.primary.main,
+                  useMatch("search")?.pattern.end && theme.palette.primary.main,
               }}
             />
           }
           component={RouterLink}
-          to="/bids"
+          to="/search"
         />
 
         <BottomNavigationAction
@@ -96,12 +91,12 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("saved")?.pattern.end && theme.palette.primary.main,
+                  useMatch("my-books")?.pattern.end && theme.palette.primary.main,
               }}
             />
           }
           component={RouterLink}
-          to="/saved"
+          to="/my-books"
         />
 
         <BottomNavigationAction
@@ -111,13 +106,13 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("/account")?.pattern.end &&
+                  useMatch("about-us")?.pattern.end &&
                   theme.palette.primary.main,
               }}
             />
           }
           component={RouterLink}
-          to={user ? "/account" : "/login"}
+          to={'about-us'}
         />
       </BottomNavigationMUI>
     </Paper>

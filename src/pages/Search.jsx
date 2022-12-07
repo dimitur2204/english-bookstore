@@ -1,30 +1,32 @@
 /*
-Dimitar Nizamov
+Carl Christiansen
 
-This is the page that renders when you access /search
-It renders a search bar and a category list that is clickable so you can go to /category/:categoryName
+The main bids page that renders when you access /bids,
+Renders the section where the items that the user bidded on or chose to "watch" (the eye icon),
+Also renders the tabs component that allows the user to switch between the different tabs (bids, watched).
 */
-import React from "react";
-import {
-  InputAdornment,
-  Container,
-  IconButton,
-  Box,
-  Typography,
-} from "@mui/material";
-import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
-import CategoryList from "../components/search/CategoryList";
-import Input from "../components/global/Input";
 
-function Search() {
-  const [value, setValue] = React.useState("");
+import React from "react";
+import { Tab, TabList, Tabs, TabPanel } from "@mui/joy";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import { itemData1, itemData2 } from "../components/booksList";
+import theme from "../theme";
+import { Container, Typography, Box, InputAdornment,Input, IconButton,} from "@mui/material";
+import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
+
+// Bidding page that is made up of Header + ButtonTabs component
+function Bids() {
+  const [value, setValue] = React.useState('');
+  const [index,setIndex] = React.useState(0);
   return (
-    <Container>
+    <div>
+      <Container>
       <Box
         sx={{ mt: "10px", display: "flex", justifyContent: "space-between" }}
       >
         <IconButton sx={{ pl: 0 }} color="primary">
-          <SearchIcon />
+          <CloseIcon />
         </IconButton>
         {/* white box for typing what users search for */}
         <Input
@@ -37,32 +39,76 @@ function Search() {
               ) : null}
             </InputAdornment>
           }
-          placeholder="What do you need?"
+          placeholder="Type title or author"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           autoFocus
         />
+        <IconButton sx={{ pl: 0 }} color="primary">
+          <SearchIcon />
+        </IconButton>
       </Box>
-
-      {/*displaying category list so that users can choose from different kinds of art */}
-      {!value ? (
-        <CategoryList />
-      ) : (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "calc(70vh - 56px)",
-          }}
-          // if results finds no such item, this will be displayed
-        >
-          <Typography sx={{}}>There are no results found...</Typography>
-        </Box>
-      )}
-    </Container>
+      <Tabs
+        aria-label="Soft tabs"
+        value={index}
+        onChange={(event, value) => setIndex(value)}
+        sx={{backgroundColor: theme.palette.background.default}}
+      >
+        <TabList variant="soft">
+          <Tab
+          sx={{borderRadius: 1000}}
+            variant={index === 0 ? "solid" : "plain"}
+            color={index === 0 ? "primary" : "neutral"}
+            style={{color: index === 0 && "white"}}
+          >
+            Books
+          </Tab>
+          <Tab
+            sx={{borderRadius: 1000}}
+            variant={index === 1 ? "solid" : "plain"}
+            color={index === 1 ? "primary" : "neutral"}
+            style={{color: index === 1 && "white"}}
+          >
+           Miscellaneous
+          </Tab>
+          </TabList>
+          <TabPanel value={0}>
+          <ImageList col={2} gap={theme.spacing(2)}>
+            {itemData1.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+                <Typography>
+                    {item.title}
+                </Typography>
+              </ImageListItem>
+            ))}
+          </ImageList>
+          </TabPanel>
+          <TabPanel value={1}>
+          <ImageList col={2} gap={theme.spacing(2)}>
+            {itemData2.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+                <Typography>
+                    {item.title}
+                </Typography>
+              </ImageListItem>
+            ))}
+          </ImageList>
+          </TabPanel>
+      </Tabs>
+      </Container>
+    
+    </div>
   );
 }
 
-export default Search;
+export default Bids;
