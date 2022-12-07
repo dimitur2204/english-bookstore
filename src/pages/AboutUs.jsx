@@ -1,11 +1,15 @@
+/*Carl Christiansen
+
+*/
+
 import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
-import { Paper, Typography } from "@mui/material";
+import { Container, Paper, Typography } from "@mui/material";
 
 function AboutUs() {
   return (
-    <div>
+    <Container>
       <Header text="About Us" />
       <Paper
         sx={{
@@ -32,14 +36,14 @@ function AboutUs() {
         <iframe
           title="yes"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233.0747629169948!2d10.199207333959114!3d56.150014022186504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3f8d11dad5df%3A0xdfe7ecf32383a789!2sEnglish%20Books!5e0!3m2!1sda!2sdk!4v1670406669812!5m2!1sda!2sdk"
-          width="400"
+          width="100%"
           height="300"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-    </div>
+    </Container>
   );
 }
 
