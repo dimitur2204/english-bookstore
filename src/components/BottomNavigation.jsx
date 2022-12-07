@@ -76,12 +76,12 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("create")?.pattern.end && theme.palette.primary.main,
+                  useMatch("wishlist")?.pattern.end && theme.palette.primary.main,
               }}
             />
           }
           component={RouterLink}
-          to="/create"
+          to="/wishlist"
         />
 
         <BottomNavigationAction
