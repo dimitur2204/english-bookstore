@@ -43,21 +43,27 @@ const theme = createTheme({
 
     h1: {
       marginTop: "1.5rem",
-      fontFamily: ["quiche-sans, serif"],
+      fontFamily: ["scotch-display, serif"],
       fontSize: "2.1rem",
-      fontWeight: 500,
+      fontWeight: 600,
     },
 
     h2: {
-      fontFamily: ["quiche-sans, serif"],
+      fontFamily: ["scotch-display, serif"],
       fontSize: "2rem",
-      fontWeight: 500,
+      fontWeight: 600,
       color: '#C59444',
     },
 
+    h3: {
+      fontFamily: ["scotch-display, serif"],
+      fontSize: "1.7rem",
+      fontWeight: 600,
+      color: '#C59444',
+    },
     fontFamily: [
       `-apple-system,
-      work-sans,
+      halcom,
       Segoe UI,
       Roboto,
       Oxygen,
@@ -135,8 +141,8 @@ export const joyTheme = extendJoyTheme({
     // dark: { ... }
   },
   fontFamily: {
-    display: '"Roboto","Helvetica","Arial",sans-serif',
-    body: '"Roboto","Helvetica","Arial",sans-serif',
+    display: '"halcom","Helvetica","Arial",sans-serif',
+    body: '"halcom","Helvetica","Arial",sans-serif',
   },
   shadow: {
     xs: `var(--mui-shadowRing), ${theme.shadows[1]}`,

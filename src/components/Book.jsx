@@ -12,7 +12,7 @@ const LineClampTypography = styled(Typography)`
   text-overflow: ellipsis;
 `
 
-function Book({book}) {
+function Book({book, height}) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
 
   return (
@@ -22,7 +22,7 @@ function Book({book}) {
           src={`${book.img}`}
           alt={book.title}
           loading="lazy"
-          style={{height: 160, maxHeight: 160, objectFit: 'cover'}}
+          style={{height: height ?? 160, maxHeight: height ?? 160, objectFit: 'cover'}}
         />
         <LineClampTypography
           fontWeight='600'
