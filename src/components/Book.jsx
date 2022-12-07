@@ -1,7 +1,16 @@
-import {Box, Typography, ImageListItem} from "@mui/material";
+import {Typography, ImageListItem} from "@mui/material";
 import theme from "../theme";
 import React, {useState} from "react";
 import BookDetails from "./BookDetails";
+import styled from "@emotion/styled";
+
+const LineClampTypography = styled(Typography)`
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
 
 function Book({book}) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
@@ -13,14 +22,19 @@ function Book({book}) {
           src={`${book.img}`}
           alt={book.title}
           loading="lazy"
-          style={{height: 160, objectFit: 'cover'}}
+          style={{height: 160, maxHeight: 160, objectFit: 'cover'}}
         />
-        <Typography fontWeight='600' lineHeight="1.2rem">
+        <LineClampTypography
+          fontWeight='600'
+          lineHeight="1.2rem"
+          mt={1}
+          height={38.5}
+        >
           {book.title}
-        </Typography>
-        <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="0.8rem">
+        </LineClampTypography>
+        <LineClampTypography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="0.8rem" height={30}>
           {book.author}
-        </Typography>
+        </LineClampTypography>
         <Typography fontWeight="light" lineHeight={1.2}  fontSize="1rem" color={theme.palette.primary.main}>
           {book.price} DKK
         </Typography>
