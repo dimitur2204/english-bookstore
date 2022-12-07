@@ -1,8 +1,57 @@
 import {Box, Button, Chip, SwipeableDrawer, Typography} from "@mui/material";
-import React from "react";
-import {Close} from "@mui/icons-material";
+import React, {useEffect, useState} from "react";
+import {Bookmark, BookmarkBorderOutlined, Close} from "@mui/icons-material";
+import {cloneDeep, isEqual} from "lodash";
 
 function BookDetails({book, isOpen, closeDetails}) {
+  const [isBookmarked, setIsBookmarked] = useState(false)
+  const [bookInStorage, setBooksInStorage] = useState([])
+
+  useEffect(() => {
+    if(isOpen) {
+      const currentlySavedBooks = JSON.parse(localStorage.getItem('savedBooks'))
+      const savedBooks = cloneBooks(currentlySavedBooks);
+
+      const bookIndex = savedBooks.findIndex((bookStorage) => isEqual(book,bookStorage))
+      setIsBookmarked(bookIndex >= 0)
+
+      setBooksInStorage(savedBooks)
+    }
+  }, [isOpen])
+
+  const cloneBooks = (booksToClone) => {
+    return cloneDeep(!booksToClone || booksToClone.length === 0 ? [] : booksToClone)
+  }
+
+  useEffect(() => {
+    if(isOpen){
+      const currentlySavedBooks = JSON.parse(localStorage.getItem('savedBooks'))
+
+      let savedBooks = cloneBooks(currentlySavedBooks);
+
+      if(isBookmarked) {
+        if(savedBooks.length === 0) {
+          savedBooks = [book]
+        }
+        else {
+          savedBooks.push(book)
+        }
+      }
+      else {
+        const bookIndex = savedBooks.findIndex((bookStorage) => isEqual(book,bookStorage))
+
+        if(bookIndex >= 0) {
+          savedBooks.splice(bookIndex, 1)
+        }
+      }
+
+      setBooksInStorage(savedBooks)
+      localStorage.setItem('savedBooks', JSON.stringify(savedBooks))
+    }
+  }, [isBookmarked])
+
+  const toggleIsBookmarked = () => setIsBookmarked((prevState) => !prevState)
+
   return (
     <SwipeableDrawer
       anchor="bottom"
@@ -17,7 +66,14 @@ function BookDetails({book, isOpen, closeDetails}) {
 
         <img src={book.img} width="100%" height="350" style={{objectFit: 'cover'}}/>
 
-        <Typography fontWeight='600' lineHeight="1.8rem" fontSize="1.8rem" mt={0.5} color="#202504">{book.title}</Typography>
+        <Box display="flex" justifyContent="space-between">
+          <Typography fontWeight='600' lineHeight="1.8rem" fontSize="1.8rem" mt={0.5} color="#202504">{book.title}</Typography>
+
+          {isBookmarked ?
+            <Bookmark fontSize="large" onClick={toggleIsBookmarked}/>
+            : <BookmarkBorderOutlined fontSize="large" onClick={toggleIsBookmarked}/>
+          }
+        </Box>
 
         <Typography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="1rem" mb={2}>
           by {book.author}
