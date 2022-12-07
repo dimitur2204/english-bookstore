@@ -10,7 +10,7 @@ function MyBooks() {
     <>
         <Header text="My books" />
       <Container>
-        <Typography as="h2" fontSize="2rem" fontFamily="serif" color={theme.palette.common.black}>
+        <Typography variant='h3' fontFamily="scotch-display" color={theme.palette.common.black}>
             Purchased
         </Typography>
         <ImageList cols={2} gap={16}>
@@ -18,7 +18,7 @@ function MyBooks() {
         <Book height={220} book={item} key={item.img}/>
       ))}
     </ImageList>
-    <Typography as="h2" fontSize="2rem" fontFamily="serif" color={theme.palette.common.black}>
+    <Typography variant='h3' fontFamily="scotch-display" color={theme.palette.common.black}>
             Saved
         </Typography>
         <ImageList cols={2} gap={16}>
