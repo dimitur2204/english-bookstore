@@ -18,7 +18,7 @@ import { getAuth } from "firebase/auth";
 import App from "./App";
 import firebaseApp from "./firebase-config";
 import Search from "./pages/Search";
-import Create from "./pages/Create";
+import Wishlist from "./pages/Wishlist";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -48,18 +48,11 @@ const createRoutes = () =>
       >
         <Route path="/" element={<Home />} />
         <Route path="/english-bookstore/home" element={<Home />} />
-        <Route
-          path="create"
-          element={
-            <ProtectedRoute>
-              <Create />
-            </ProtectedRoute>
-          }
-        />
         <Route path="search" element={<Search />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="my-books" element={<MyBooks />} />
         <Route path=":category" element={<Home />} />
+        <Route path="wishlist" element={<Wishlist />} />
       </Route>
       <Route path="landing" element={<Landing />} />
     </>
