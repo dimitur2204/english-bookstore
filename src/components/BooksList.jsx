@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Button, ImageList, Typography } from '@mui/material'
-import { itemData1, itemData2 } from './booksList.js'
+import { thisWeeksBoooks, thisWeeksBooksMore } from './booksList.js'
 import Book from "./Book";
 
 function BooksList() {
@@ -12,10 +12,10 @@ function BooksList() {
     <Button onClick={() => setAll(!all)} variant="text">See {all ? 'less' : 'all'}</Button>
     </Box>
     <ImageList cols={3} gap={16}>
-      {itemData1.map((item) => (
+      {thisWeeksBoooks.map((item) => (
         <Book book={item} key={item.img}/>
       ))}
-      {all && itemData2.map((item) => (
+      {all && thisWeeksBooksMore.map((item) => (
         <Book book={item} key={item.img}/>
       ))}
     </ImageList>
