@@ -30,7 +30,6 @@ export default function Header({
         justifyContent: "space-between",
         my: theme.spacing(1),
         alignItems: "center",
-        padding: 1,
         ...sx,
       }}
       as="header"

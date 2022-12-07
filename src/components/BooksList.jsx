@@ -19,8 +19,6 @@ function BooksList() {
         <Book book={item} key={item.img}/>
       ))}
     </ImageList>
-
-
     </>
 
   )
