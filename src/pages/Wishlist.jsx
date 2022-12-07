@@ -10,15 +10,15 @@ import Header from "../components/Header";
 import {
   Typography,
   Paper,
+  Container
 } from "@mui/material";
 import theme from "../theme";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
 //Our Collection page that consists of Header + ImageList component
 function Wishlist() {
   return (
-    <>
+    <Container>
       <Header text="Wishlist" />
       <Typography
       sx={{display:"flex", justifyContent:"center", textAlign:"center"}}>
@@ -67,13 +67,9 @@ function Wishlist() {
               margin: "1rem",
               display:"flex",justifyContent: 'center', alignSelf:'center'
             }}
-          ><AddCircleOutlineIcon 
-          sx={{width: "90px",
-          height: "90px",
-        }}/>
+          ><Typography sx={{fontSize:"4rem", width: "90px", height: "90px", textAlign:"center", fontWeight:"100", border:"2px solid", borderRadius:"50%"}}>+</Typography>
       </Paper>
-
-    </>
+    </Container>
   );
 }
 
