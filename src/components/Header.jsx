@@ -30,8 +30,12 @@ export default function Header({
         justifyContent: "space-between",
         my: theme.spacing(1),
         alignItems: "center",
+<<<<<<< Updated upstream
         padding: 0,
         margin:"2rem",
+=======
+        padding: 1,
+>>>>>>> Stashed changes
         ...sx,
       }}
       as="header"
@@ -39,7 +43,16 @@ export default function Header({
       {withBackButton ? <BackButton onClick={() => navigate(-1)} /> : null}
       {/* code for header for when it contains a search bar or account menu (the three dots) */}
       <Typography variant="h1" sx={{ marginTop: theme.spacing(1) }}>
-        {titleArray?.length === 2 ? <>{titleArray[0]} {' '} <span style={{color: theme.palette.primary.main}}>{titleArray[1]}</span></> : text}
+        {titleArray?.length === 2 ? (
+          <>
+            {titleArray[0]}{" "}
+            <span style={{ color: theme.palette.primary.main }}>
+              {titleArray[1]}
+            </span>
+          </>
+        ) : (
+          text
+        )}
       </Typography>
       {withSearch ? (
         <Link to="/search">
