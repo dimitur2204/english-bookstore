@@ -21,26 +21,28 @@ function Wishlist() {
   return (
     <>
       <Header text="Wishlist" />
-      <Typography>You have 3 items in your wishlist</Typography>
+      <Typography
+      sx={{display:"flex", justifyContent:"center", textAlign:"center"}}>
+        You have 3 items in your wishlist</Typography>
       <Paper
       sx={{
         backgroundColor: theme.palette.primary.main,
         borderRadius: "29px",
-        p: 4,
+        p: 3,
         margin: "1rem",
       }}
-    > <Typography>Tell me how it ends</Typography>
+    > <Typography sx={{fontWeight:"bold"}}>Tell me how it ends</Typography>
       <Typography>Valeria Luiselli</Typography></Paper>
 
       <Paper
             sx={{
               backgroundColor: theme.palette.primary.main,
               borderRadius: "29px",
-              p: 4,
+              p: 3,
               margin: "1rem",
             }}
           >
-          <Typography>1984</Typography>
+          <Typography sx={{fontWeight:"bold"}}>1984</Typography>
           <Typography>George Orwell</Typography>
       </Paper>
 
@@ -52,8 +54,9 @@ function Wishlist() {
               margin: "1rem",
             }}
           >
-          <Typography>The Plot Against America</Typography>
+          <Typography sx={{fontWeight:"bold"}}>The Plot Against America</Typography>
           <Typography>Phillip Roth</Typography>
+          
 
       </Paper>
 
@@ -61,10 +64,14 @@ function Wishlist() {
             sx={{
               backgroundColor: "#E6D4B7",
               borderRadius: "29px",
-              p: 4,
+              p: 2,
               margin: "1rem",
+              display:"flex",justifyContent: 'center', alignSelf:'center'
             }}
-          >
+          ><AddCircleOutlineIcon 
+          sx={{width: "90px",
+          height: "90px",
+        }}/>
       </Paper>
 
     </>
