@@ -14,7 +14,7 @@ import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
 import { Container, Typography, Box, InputAdornment,Input, IconButton,} from "@mui/material";
 import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
-
+import CategoryList from '../components/search/CategoryList'
 // Bidding page that is made up of Header + ButtonTabs component
 function Bids() {
   const [value, setValue] = React.useState('');
@@ -73,36 +73,10 @@ function Bids() {
           </Tab>
           </TabList>
           <TabPanel value={0}>
-          <ImageList col={2} gap={theme.spacing(2)}>
-            {itemData1.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <Typography>
-                    {item.title}
-                </Typography>
-              </ImageListItem>
-            ))}
-          </ImageList>
+            <CategoryList list={itemData1} />
           </TabPanel>
           <TabPanel value={1}>
-          <ImageList col={2} gap={theme.spacing(2)}>
-            {itemData2.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <Typography>
-                    {item.title}
-                </Typography>
-              </ImageListItem>
-            ))}
-          </ImageList>
+          <CategoryList list={itemData2} />
           </TabPanel>
       </Tabs>
       </Container>

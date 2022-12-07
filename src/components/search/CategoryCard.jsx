@@ -12,18 +12,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // function for each category card to get a fitting title and img
-function CategoryCard({ title, imageIndex, url }) {
+function CategoryCard({ title, img, url }) {
   return (
     // showcasing images for our cagetory cards
     <Link to={url}>
       <Box
         // fetching a specific image from our public folder
         sx={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/category-${imageIndex}.jpg)`,
+          backgroundImage: `url(${img})`,
           position: "relative",
           zIndex: 0,
-          width: "42%",
-          height: 115,
+          height: 200,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           borderRadius: 5,
         }}
       >

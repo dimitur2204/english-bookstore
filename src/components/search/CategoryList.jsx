@@ -1,37 +1,10 @@
-import { Box } from "@mui/material";
+import { Box, Unstable_Grid2 as Grid2 } from "@mui/material";
 import React from "react";
 import theme from "../../theme";
 import CategoryCard from "./CategoryCard";
 
-// listing images of cagetories for our search feature
-const categories = [
-  {
-    title: "Drama",
-    imageIndex: 4,
-  },
-  {
-    title: "Kids",
-    imageIndex: 3,
-  },
-  {
-    title: "Education",
-    imageIndex: 2,
-  },
-  {
-    title: "Fiction",
-    imageIndex: 1,
-  },
-  {
-    title: "Non-fiction",
-    imageIndex: 5,
-  },
-  {
-    title: "Others",
-    imageIndex: 6,
-  },
-];
 // defining the categories to get the correct background image for them
-function CategoryList() {
+function CategoryList({list}) {
   return (
     <Box
       sx={{
@@ -41,17 +14,19 @@ function CategoryList() {
         },
       }}
     >
-      {categories.map((c) => {
+      <Grid2 container spacing={2}>
+      {list.map((c) => {
         return (
-          <Box key={c.imageIndex} sx={{ mb: theme.spacing(2) }}>
+            <Grid2 xs={6}  key={c.imageIndex}>
             <CategoryCard
               title={c.title}
-              imageIndex={c.imageIndex}
+              img={c.img}
               url={`/${c.title}`}
             />
-          </Box>
+            </Grid2>
         );
       })}
+          </Grid2>
     </Box>
   );
 }
