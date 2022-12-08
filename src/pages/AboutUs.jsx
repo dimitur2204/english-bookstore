@@ -1,7 +1,3 @@
-/*Carl Christiansen
-
-*/
-
 import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
@@ -19,6 +15,7 @@ function AboutUs() {
           mb: `calc(72px + ${theme.spacing(2)})`,
           marginY: 4,
         }}
+        // info about how purchasing a book works
       >
         <Typography fontWeight="bold" color={theme.palette.common.white} mb={1}>
           How to get your book{" "}
@@ -37,7 +34,7 @@ function AboutUs() {
           in order to verify the purchase.
         </Typography>
       </Paper>
-
+      {/* inserting a pin on a map to display the location of the physical shop */}
       <div style={{ marginBottom: "150px" }}>
         <iframe
           title="yes"

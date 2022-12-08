@@ -1,10 +1,3 @@
-/*
-Dimitar Nizamov
-
-This is the page that renders when you access /saved
-It renders the <ImageList /> component and passes it the posts prop
-It currently filters by posts that are for sale, but that is a placeholder since we didn't implement have the time to implement the saved posts feature
-*/
 import React from "react";
 import Header from "../components/Header";
 import {
@@ -15,7 +8,7 @@ import {
 import theme from "../theme";
 
 
-//Our Collection page that consists of Header + ImageList component
+//Our Wishlist page that consists of Header + Paper components that work as a box for adding a book in wishlist
 function Wishlist() {
   return (
     <Container>
@@ -59,6 +52,7 @@ function Wishlist() {
 
       </Paper>
 
+      {/* a paper component to be able to add a book to wishlist */}
       <Paper
             sx={{
               backgroundColor: "#E6D4B7",

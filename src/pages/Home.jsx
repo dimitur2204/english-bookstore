@@ -1,12 +1,6 @@
 /*
-Dumitrita Poiata and Dimitar Nizamov
 
-This is the main page of the app
-It renders different header based on the route that you are on
-And also filters the posts based on the route that you are on
-ex. /category/:categoryName will render the posts that are in that category
-
-It also works as a home page that renders the posts in all categories
+This is the home page of the app
 */
 import React from "react";
 import Header from "../components/Header";
@@ -24,6 +18,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
 
+// A chosen book that is recommended by us
 function FeaturedBook() {
   return (
     <Box my={2}>
@@ -80,6 +75,7 @@ function FeaturedBook() {
               sx={{ color: theme.palette.primary.main }}
             />
           </Box>
+          {/* Link to who the book was rated by */}
           <Typography
             fontWeight="light"
             color="rgba(0,0,0,0.5)"
@@ -102,6 +98,7 @@ function FeaturedBook() {
     </Box>
   );
 }
+// Box informing about the wishlist option
 function WishlistCTA() {
   return (
     <Paper
@@ -153,6 +150,7 @@ function WishlistCTA() {
     </Paper>
   );
 }
+// an svg image of a woman reading a book, placed on top of the page
 export default function Home() {
   return (
     <Container>

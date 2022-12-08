@@ -1,8 +1,6 @@
 /*
-Dumitrita Poiata
-
 This is the page that renders when you are redirected /landing
-Only shows the first time the user logs in
+Only shows the first time the user uses the webapp
 */
 import theme from "../theme";
 import { Typography, Button } from "@mui/material";
@@ -15,6 +13,7 @@ export default function LandingPage() {
   };
   return (
     <div
+    // background of the landing page
       style={{
         height: "100vh",
         width: "100%",
@@ -36,6 +35,7 @@ export default function LandingPage() {
           paddingTop: "50%",
         }}
       >
+        {/* img of the landing page + text */}
         <img
           alt="logo"
           style={{ width: "80%" }}
@@ -48,6 +48,8 @@ export default function LandingPage() {
           Are you a book enthusiast? What about puzzles? Do you also care about
           sustainable shopping? Then you've come to the right place!
         </Typography>
+        
+        {/* button to continue to Home */}
         <Button
           variant="outlined"
           disableElevation
