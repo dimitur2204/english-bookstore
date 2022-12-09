@@ -2,6 +2,7 @@ import {Box, Button, Chip, SwipeableDrawer, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {Bookmark, BookmarkBorderOutlined, Close} from "@mui/icons-material";
 import {cloneDeep, isEqual} from "lodash";
+import BuyBook from "./BuyBook";
 
 function BookDetails({book, isOpen, closeDetails}) {
   const [isBookmarked, setIsBookmarked] = useState(false)
@@ -29,17 +30,17 @@ function BookDetails({book, isOpen, closeDetails}) {
 
       let savedBooks = cloneBooks(currentlySavedBooks);
 
+      const bookIndex = savedBooks.findIndex((bookStorage) => isEqual(book,bookStorage))
+
       if(isBookmarked) {
         if(savedBooks.length === 0) {
           savedBooks = [book]
         }
         else {
-          savedBooks.push(book)
-        }
+          bookIndex === -1 && savedBooks.push(book)
+        } 
       }
       else {
-        const bookIndex = savedBooks.findIndex((bookStorage) => isEqual(book,bookStorage))
-
         if(bookIndex >= 0) {
           savedBooks.splice(bookIndex, 1)
         }
@@ -92,7 +93,7 @@ function BookDetails({book, isOpen, closeDetails}) {
           Price: {book.price} DKK
         </Typography>
 
-        <Button variant="contained" fullWidth>Buy now</Button>
+        <BuyBook />
       </Box>
     </SwipeableDrawer>
   )
