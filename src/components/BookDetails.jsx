@@ -38,7 +38,7 @@ function BookDetails({book, isOpen, closeDetails}) {
         }
         else {
           bookIndex === -1 && savedBooks.push(book)
-        } 
+        }
       }
       else {
         if(bookIndex >= 0) {

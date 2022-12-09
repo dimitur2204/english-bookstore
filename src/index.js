@@ -8,6 +8,8 @@ import theme, { joyTheme, muiTheme } from "./theme";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import createRoutes from "./Routes";
 import { CssVarsProvider } from "@mui/joy/styles";
+import {LocalizationProvider} from "@mui/x-date-pickers";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 
 const router = createBrowserRouter(createRoutes(), { basename: "/english-bookstore" });
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -16,7 +18,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssVarsProvider theme={deepmerge(joyTheme, muiTheme)}>
-        <RouterProvider router={router} />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <RouterProvider router={router} />
+        </LocalizationProvider>
       </CssVarsProvider>
     </ThemeProvider>
   </React.StrictMode>
