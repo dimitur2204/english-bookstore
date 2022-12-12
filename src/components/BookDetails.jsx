@@ -6,7 +6,6 @@ import BuyBook from "./BuyBook";
 
 function BookDetails({book, isOpen, closeDetails}) {
   const [isBookmarked, setIsBookmarked] = useState(false)
-  const [bookInStorage, setBooksInStorage] = useState([])
 
   useEffect(() => {
     if(isOpen) {
@@ -16,7 +15,6 @@ function BookDetails({book, isOpen, closeDetails}) {
       const bookIndex = savedBooks.findIndex((bookStorage) => isEqual(book,bookStorage))
       setIsBookmarked(bookIndex >= 0)
 
-      setBooksInStorage(savedBooks)
     }
   }, [isOpen])
 
@@ -45,8 +43,6 @@ function BookDetails({book, isOpen, closeDetails}) {
           savedBooks.splice(bookIndex, 1)
         }
       }
-
-      setBooksInStorage(savedBooks)
       localStorage.setItem('savedBooks', JSON.stringify(savedBooks))
     }
   }, [isBookmarked])
