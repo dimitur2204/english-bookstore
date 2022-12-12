@@ -17,9 +17,9 @@ import {
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
-
+import {useBooks} from '../hooks/useBooks'
 // A chosen book that is recommended by us
-function FeaturedBook() {
+function FeaturedBook({book}) {
   return (
     <Box my={2}>
       <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
@@ -28,14 +28,14 @@ function FeaturedBook() {
       <Grid2 container spacing={2}>
         <Grid2 xs={6}>
           <img
-            src={`${process.env.PUBLIC_URL}/cover-1.jpg`}
+            src={book?.image}
             style={{ width: "100%" }}
-            alt="featured book"
+            alt={book?.item_title}
           />
         </Grid2>
         <Grid2 xs={6}>
           <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>
-            1984
+            {book?.item_title}
           </Typography>
           <Typography
             fontWeight="light"
@@ -43,7 +43,7 @@ function FeaturedBook() {
             lineHeight={1.2}
             fontSize="1rem"
           >
-            George Orwell
+            {book?.author}
           </Typography>
           <Typography
             fontWeight="light"
@@ -91,7 +91,7 @@ function FeaturedBook() {
             </a>
           </Typography>
           <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>
-            240 dkk
+            {book?.price} dkk
           </Typography>
         </Grid2>
       </Grid2>
@@ -152,6 +152,11 @@ function WishlistCTA() {
 }
 // an svg image of a woman reading a book, placed on top of the page
 export default function Home() {
+  const {
+		response: books
+	} = useBooks();
+  const featuredBook = books?.find(b => b['is-our-choice'])
+  const thisWeeksBooks = books?.filter(b => b.isweekchoice && b['is-our-choice'] === false)
   return (
     <Container>
       <Header withSearch sx={{ marginBottom: theme.spacing(-13) }} />
@@ -160,8 +165,8 @@ export default function Home() {
         alt="A woman reading a book"
         style={{ width: "130vw", marginLeft: "-110px", marginTop:"30px" }}
       />
-      <FeaturedBook />
-      <BooksList />
+      <FeaturedBook book={featuredBook} />
+      {thisWeeksBooks ? <BooksList books={thisWeeksBooks} /> : null}
       <WishlistCTA />
     </Container>
   );

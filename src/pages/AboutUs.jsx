@@ -33,7 +33,6 @@ function AboutUs() {
     </List>
     <Box display="flex" justifyContent="center" alignItems="center">
     <img  src={`${process.env.PUBLIC_URL}/successful-purchase.svg`} alt="A jin coming out of a lamp" />
-
     </Box>
     </Container>
   );

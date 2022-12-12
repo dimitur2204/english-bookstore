@@ -19,8 +19,8 @@ function Book({book, height}) {
     <>
       <ImageListItem onClick={() => setDetailsAreOpen(true)}>
         <img
-          src={`${book.img}`}
-          alt={book.title}
+          src={`${book.image}`}
+          alt={book.item_title}
           loading="lazy"
           style={{height: height ?? 160, maxHeight: height ?? 160, objectFit: 'cover'}}
         />
@@ -30,7 +30,7 @@ function Book({book, height}) {
           mt={1}
           height={38.5}
         >
-          {book.title}
+          {book.item_title}
         </LineClampTypography>
         <LineClampTypography fontWeight="light" color='rgba(0,0,0,0.5)' lineHeight={1.2} fontSize="0.8rem" height={30}>
           {book.author}
