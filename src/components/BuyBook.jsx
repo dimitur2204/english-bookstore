@@ -1,12 +1,13 @@
-import {Box, Button, Modal, Stack, TextField, Typography} from "@mui/material";
+import {Box, Button, Stack, TextField, Typography} from "@mui/material";
 import React, {useState} from "react";
-import {Close} from "@mui/icons-material";
 import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
+import ModalFormLayout from "./ModalFormLayout";
+import useFormDetails from "../hooks/useFormDetails";
 
 function BuyBook() {
   const [isBuyingBook, setIsBuyingBook] = useState(false)
-  const [formDetails, setFormDetails] = useState({
+  const [formDetails, handleChange] = useFormDetails({
     name: '',
     email: '',
     phoneNumber: '',
@@ -14,23 +15,10 @@ function BuyBook() {
     dateToCome: dayjs()
   })
 
-  const handleChange = (key) => {
-    return (event) => {
-      // console.log(value)
-      const value = event.target?.value ?? event
-      setFormDetails((prevState) => ({...prevState, [key]: value}))
-    }
-  }
-
   return (
     <>
       <Button variant="contained" fullWidth onClick={() => setIsBuyingBook(true)}>Buy now</Button>
-      <Modal open={isBuyingBook}>
-        <Box display="flex" alignItems="center" justifyContent="center" height="100%">
-          <Box p={3} style={{backgroundColor: '#fff'}} width={350} borderRadius={10}>
-            <Box textAlign="right">
-              <Close fontSize="large" onClick={() => setIsBuyingBook(false)}/>
-            </Box>
+      <ModalFormLayout open={isBuyingBook} handleCloseModal={() => setIsBuyingBook(false)}>
 
             <Typography color="#221D1D" fontWeight="bold" fontSize="1.4rem" mb={4} textAlign="center">MobilePay: 01234567</Typography>
 
@@ -78,9 +66,7 @@ function BuyBook() {
             <Box textAlign="center" mt={3}>
               <Button variant="contained" size="large">Submit</Button>
             </Box>
-          </Box>
-        </Box>
-      </Modal>
+      </ModalFormLayout>
     </>
   )
 }

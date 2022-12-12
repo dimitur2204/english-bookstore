@@ -37,6 +37,9 @@ const theme = createTheme({
       ...bookstoreMain,
       main: bookstoreMain[500],
     },
+    secondary: {
+      main: '#2F2E41'
+    }
   },
   typography: {
     fontSize: 16,
