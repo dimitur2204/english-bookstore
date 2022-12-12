@@ -23,9 +23,9 @@ function CategoryCard({ title, img, url }) {
           position: "relative",
           zIndex: 0,
           height: 200,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           borderRadius: 5,
         }}
       >

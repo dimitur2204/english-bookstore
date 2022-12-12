@@ -13,7 +13,7 @@ export default function LandingPage() {
   };
   return (
     <div
-    // background of the landing page
+      // background of the landing page
       style={{
         height: "100vh",
         width: "100%",
@@ -48,7 +48,7 @@ export default function LandingPage() {
           Are you a book enthusiast? What about puzzles? Do you also care about
           sustainable shopping? Then you've come to the right place!
         </Typography>
-        
+
         {/* button to continue to Home */}
         <Button
           variant="outlined"

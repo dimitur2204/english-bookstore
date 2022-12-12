@@ -12,7 +12,7 @@ const bookstoreMain = {
   200: "#f3d1b3",
   300: "#edba8d",
   400: "#e7a367",
-  500: '#C59444',
+  500: "#C59444",
   600: "#b28a3f",
   700: "#8d6f35",
   800: "#69552b",
@@ -21,13 +21,13 @@ const bookstoreMain = {
   A200: "#ffffff",
   A400: "#ffffff",
   A700: "#ffffff",
-}
+};
 // theme.js allows us to change the colors/font/sizes of various components in one go
 const theme = createTheme({
   palette: {
     background: {
       default: "#F7F6F5",
-      landing: '#C59444',
+      landing: "#C59444",
       icon: "rgba(0, 0, 0, 0.8)",
     },
     primary: {
@@ -35,8 +35,8 @@ const theme = createTheme({
       main: bookstoreMain[500],
     },
     secondary: {
-      main: '#2F2E41'
-    }
+      main: "#2F2E41",
+    },
   },
   typography: {
     fontSize: 16,
@@ -52,14 +52,14 @@ const theme = createTheme({
       fontFamily: ["scotch-display, serif"],
       fontSize: "2rem",
       fontWeight: 600,
-      color: '#C59444',
+      color: "#C59444",
     },
 
     h3: {
       fontFamily: ["scotch-display, serif"],
       fontSize: "1.7rem",
       fontWeight: 600,
-      color: '#C59444',
+      color: "#C59444",
     },
     fontFamily: [
       `-apple-system,

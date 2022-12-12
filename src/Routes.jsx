@@ -7,11 +7,7 @@ Protected Route is a component that checks if the user is logged in and redirect
 It also renders certain routes within the App component which is the layout component that renders the BottomNavigation component
 */
 import React from "react";
-import {
-  createRoutesFromElements,
-  Outlet,
-  Route,
-} from "react-router-dom";
+import { createRoutesFromElements, Outlet, Route } from "react-router-dom";
 import App from "./App";
 import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";

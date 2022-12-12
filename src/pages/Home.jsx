@@ -17,9 +17,9 @@ import {
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
-import {useBooks} from '../hooks/useBooks'
+import { useBooks } from "../hooks/useBooks";
 // A chosen book that is recommended by us
-function FeaturedBook({book}) {
+function FeaturedBook({ book }) {
   return (
     <Box my={2}>
       <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
@@ -152,18 +152,18 @@ function WishlistCTA() {
 }
 // an svg image of a woman reading a book, placed on top of the page
 export default function Home() {
-  const {
-		response: books
-	} = useBooks();
-  const featuredBook = books?.find(b => b['is-our-choice'])
-  const thisWeeksBooks = books?.filter(b => b.isweekchoice && b['is-our-choice'] === false)
+  const { response: books } = useBooks();
+  const featuredBook = books?.find((b) => b["is-our-choice"]);
+  const thisWeeksBooks = books?.filter(
+    (b) => b.isweekchoice && b["is-our-choice"] === false
+  );
   return (
     <Container>
       <Header withSearch sx={{ marginBottom: theme.spacing(-13) }} />
       <img
         src={`${process.env.PUBLIC_URL}/woman-reading.svg`}
         alt="A woman reading a book"
-        style={{ width: "130vw", marginLeft: "-110px", marginTop:"30px" }}
+        style={{ width: "130vw", marginLeft: "-110px", marginTop: "30px" }}
       />
       <FeaturedBook book={featuredBook} />
       {thisWeeksBooks ? <BooksList books={thisWeeksBooks} /> : null}

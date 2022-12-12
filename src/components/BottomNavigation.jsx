@@ -9,14 +9,16 @@ import BottomNavigationMUI from "@mui/material/BottomNavigation";
 import Paper from "@mui/material/Paper";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import theme from "../theme";
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import InfoIcon from '@mui/icons-material/Info';
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import InfoIcon from "@mui/icons-material/Info";
 import { Typography } from "@mui/material";
 
-const NavLabel = ({label}) => (<Typography fontSize="0.7rem">{label}</Typography>)
+const NavLabel = ({ label }) => (
+  <Typography fontSize="0.7rem">{label}</Typography>
+);
 export default function BottomNavigation() {
   const [value, setValue] = React.useState();
   return (
@@ -32,7 +34,7 @@ export default function BottomNavigation() {
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
-        sx={{py: theme.spacing(1)}}
+        sx={{ py: theme.spacing(1) }}
       >
         <BottomNavigationAction
           icon={
@@ -40,8 +42,7 @@ export default function BottomNavigation() {
               sx={{
                 width: "30px",
                 height: "30px",
-                color:
-                  useMatch("/")?.pattern.end && theme.palette.primary.main,
+                color: useMatch("/")?.pattern.end && theme.palette.primary.main,
               }}
             />
           }
@@ -73,12 +74,12 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("wishlist")?.pattern.end && theme.palette.primary.main,
+                  useMatch("wishlist")?.pattern.end &&
+                  theme.palette.primary.main,
               }}
             />
           }
           label={<NavLabel label="Wishlist" />}
-
           component={RouterLink}
           to="/wishlist"
         />
@@ -90,12 +91,12 @@ export default function BottomNavigation() {
                 width: "30px",
                 height: "30px",
                 color:
-                  useMatch("my-books")?.pattern.end && theme.palette.primary.main,
+                  useMatch("my-books")?.pattern.end &&
+                  theme.palette.primary.main,
               }}
             />
           }
           label={<NavLabel label="My books" />}
-
           component={RouterLink}
           to="/my-books"
         />
@@ -114,7 +115,7 @@ export default function BottomNavigation() {
           }
           label={<NavLabel label="Info" />}
           component={RouterLink}
-          to={'about-us'}
+          to={"about-us"}
         />
       </BottomNavigationMUI>
     </Paper>

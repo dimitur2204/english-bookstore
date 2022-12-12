@@ -1,16 +1,16 @@
-import {useState} from "react";
+import { useState } from "react";
 
 const useFormDetails = (formObject) => {
-  const [formDetails, setFormDetails] = useState(formObject)
+  const [formDetails, setFormDetails] = useState(formObject);
 
   const handleChange = (key) => {
     return (event) => {
-      const value = event.target?.value ?? event
-      setFormDetails((prevState) => ({...prevState, [key]: value}))
-    }
-  }
+      const value = event.target?.value ?? event;
+      setFormDetails((prevState) => ({ ...prevState, [key]: value }));
+    };
+  };
 
-  return [formDetails, handleChange]
-}
+  return [formDetails, handleChange];
+};
 
 export default useFormDetails;

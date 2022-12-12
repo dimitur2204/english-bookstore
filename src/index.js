@@ -8,10 +8,12 @@ import theme, { joyTheme, muiTheme } from "./theme";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import createRoutes from "./Routes";
 import { CssVarsProvider } from "@mui/joy/styles";
-import {LocalizationProvider} from "@mui/x-date-pickers";
-import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-const router = createBrowserRouter(createRoutes(), { basename: "/english-bookstore" });
+const router = createBrowserRouter(createRoutes(), {
+  basename: "/english-bookstore",
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

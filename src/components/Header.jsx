@@ -50,7 +50,7 @@ export default function Header({
       {withSearch ? (
         <Link to="/search">
           <IconButton size="large" aria-label="Search">
-            <SearchIcon sx={{ width: 32, height: 32, marginRight:"-1rem" }} />
+            <SearchIcon sx={{ width: 32, height: 32, marginRight: "-1rem" }} />
           </IconButton>
         </Link>
       ) : null}
