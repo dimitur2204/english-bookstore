@@ -1,68 +1,48 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/Header";
 import {
   Typography,
-  Paper,
-  Container
+  Container, Box, Stack
 } from "@mui/material";
-import theme from "../theme";
+import WishlistItem from "../components/WishlistItem";
+import AddBookToWishlist from "../components/AddBookToWishlist";
 
 
 //Our Wishlist page that consists of Header + Paper components that work as a box for adding a book in wishlist
 function Wishlist() {
+  const [wishlistBooks, setWishlistBooks] = useState([])
+
+  useEffect(() => {
+    getBooksFromStorage()
+  }, [])
+
+  const getBooksFromStorage = () => {
+    const wishlistBooksStorage = JSON.parse(localStorage.getItem('wishlist')) || []
+
+    setWishlistBooks(wishlistBooksStorage)
+  }
+
   return (
     <Container>
-      <Header text="Wishlist" />
-      <Typography
-      sx={{display:"flex", justifyContent:"center", textAlign:"center"}}>
-        You have 3 items in your wishlist</Typography>
-      <Paper
-      sx={{
-        backgroundColor: theme.palette.primary.main,
-        borderRadius: "29px",
-        p: 3,
-        margin: "1rem",
-      }}
-    > <Typography sx={{fontWeight:"bold"}}>Tell me how it ends</Typography>
-      <Typography>Valeria Luiselli</Typography></Paper>
+      <Header text="Your wishes" />
+      <Box position="relative">
+        <img src={`${process.env.PUBLIC_URL}/wishlist.svg`} width={125}/>
+        <Box position="absolute" top={-20} left={150} display="flex" alignItems="center" justifyContent="center">
+          <img src={`${process.env.PUBLIC_URL}/talk-buble.svg`} style={{margin: '-40px'}} width={250}/>
+          <Typography position="absolute" left={10} fontSize="0.8rem" minWidth={150}>What other books should I look for? Let me know your wishes!</Typography>
+        </Box>
+      </Box>
 
-      <Paper
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              borderRadius: "29px",
-              p: 3,
-              margin: "1rem",
-            }}
-          >
-          <Typography sx={{fontWeight:"bold"}}>1984</Typography>
-          <Typography>George Orwell</Typography>
-      </Paper>
+      <Stack spacing={2} mt={3}>
 
-      <Paper
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              borderRadius: "29px",
-              p: 4,
-              margin: "1rem",
-            }}
-          >
-          <Typography sx={{fontWeight:"bold"}}>The Plot Against America</Typography>
-          <Typography>Phillip Roth</Typography>
-          
+        {wishlistBooks.length === 0 ?
+          <Typography textAlign="center" fontSize="1.1rem">
+            You have no books in your wishlist. Why don't you add something and wait while I'm doing my magic finding the book?
+          </Typography> 
+          : wishlistBooks.map((item) => (<WishlistItem key={item.title} title={item.title} author={item.author}/>))}
+      </Stack>
 
-      </Paper>
-
-      {/* a paper component to be able to add a book to wishlist */}
-      <Paper
-            sx={{
-              backgroundColor: "#E6D4B7",
-              borderRadius: "29px",
-              p: 2,
-              margin: "1rem",
-              display:"flex",justifyContent: 'center', alignSelf:'center'
-            }}
-          ><Typography sx={{fontSize:"4rem", width: "90px", height: "90px", textAlign:"center", fontWeight:"100", border:"2px solid", borderRadius:"50%"}}>+</Typography>
-      </Paper>
+      <AddBookToWishlist handleAddBook={getBooksFromStorage}/>
     </Container>
   );
 }
