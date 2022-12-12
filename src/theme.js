@@ -1,7 +1,4 @@
-/*
-Dimitar Nizamov
-
-This is the theme file that contains the theme for the app
+/*This is the theme file that contains the theme for the app
 It uses the Material UI createTheme function to create the theme
 We have defined the global styles for our app here
 */
