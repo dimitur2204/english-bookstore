@@ -1,50 +1,37 @@
 import React from "react";
 import Header from "../components/Header";
+import { Avatar, Container, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material";
 import theme from "../theme";
-import { Container, Paper, Typography } from "@mui/material";
 
+function InfoItem({text, index}) {
+
+  return (
+    <ListItem sx={{alignItems: 'start', paddingY: theme.spacing(2)}}>
+    <ListItemAvatar>
+      <Avatar sx={{ width: 24, height: 24, fontSize: '0.8rem', background: theme.palette.common.white, color: theme.palette.text.primary, border: theme.palette.text.primary, borderWidth: '1px', borderStyle: 'solid' }}>
+        {index}.
+      </Avatar>
+    </ListItemAvatar>
+    <ListItemText sx={{margin: 0}} primaryTypographyProps={{sx: {lineHeight: "1.3rem"}}} primary={text}/>
+  </ListItem>
+  )
+}
+const items = [
+  "Find a book you want to buy and click Buy Now",
+  "Prepare your mobile pay, because you gonna need it",
+  "Fill out the form. Don't forget to add the transaction ID ",
+  "Within the form, you can choose a time and date that fits you for picking up the book.",
+"If something comes up, I'll get back to you.",
+"The last thing you need to do, is coming to Frederiks Alle and get your book."
+]
 function AboutUs() {
   return (
     <Container>
-      <Header text="About Us" />
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.primary.main,
-          borderRadius: "29px",
-          p: 4,
-          mb: `calc(72px + ${theme.spacing(2)})`,
-          marginY: 4,
-        }}
-        // info about how purchasing a book works
-      >
-        <Typography fontWeight="bold" color={theme.palette.common.white} mb={1}>
-          How to get your book{" "}
-        </Typography>
-        <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          Currently, we can only reserve an item for you after receiving
-          payment and appointment request.
-        </Typography>
-        <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          Therefore, after MobilPaying, please submit a
-          form with the desired date and time for picking up the
-          item.
-        </Typography>
-        <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          Remember the transaction ID from MobilePay is needed in order to verify the purchase.
-        </Typography>
-      </Paper>
-      {/* inserting a pin on a map to display the location of the physical shop */}
-      <div style={{ marginBottom: "150px" }}>
-        <iframe
-          title="yes"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233.0747629169948!2d10.199207333959114!3d56.150014022186504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3f8d11dad5df%3A0xdfe7ecf32383a789!2sEnglish%20Books!5e0!3m2!1sda!2sdk!4v1670406669812!5m2!1sda!2sdk"
-          width="100%"
-          height="300"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      <Header text="How buying from me works" />
+      <List>
+        {items.map((item, index) => <InfoItem text={item} index={index + 1} />)}
+    </List>
+    <img src={`${process.env.PUBLIC_URL}/wishes.svg`} alt="A jin coming out of a lamp" />
     </Container>
   );
 }

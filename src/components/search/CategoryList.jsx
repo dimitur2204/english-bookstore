@@ -21,7 +21,7 @@ function CategoryList({list}) {
             <CategoryCard
               title={c.title}
               img={c.img}
-              url={`/${c.title}`}
+              url={`/category/${c.title.toLowerCase().replace(/ /g, "-")}`}
             />
             </Grid2>
         );
