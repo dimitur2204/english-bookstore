@@ -1,5 +1,4 @@
 /*
-Dimitar Nizamov
 
 This is the layout component that renders the BottomNavigation component and the children components
 It acts like a wrapper for the application.

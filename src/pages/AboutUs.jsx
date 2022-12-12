@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import { Avatar, Container, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material";
+import { Avatar, Box, Container, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material";
 import theme from "../theme";
 
 function InfoItem({text, index}) {
@@ -31,7 +31,9 @@ function AboutUs() {
       <List>
         {items.map((item, index) => <InfoItem text={item} index={index + 1} />)}
     </List>
-    <img src={`${process.env.PUBLIC_URL}/wishes.svg`} alt="A jin coming out of a lamp" />
+    <Box display="flex" justifyContent="center" alignItems="center">
+    <img  src={`${process.env.PUBLIC_URL}/successful-purchase.svg`} alt="A jin coming out of a lamp" />
+    </Box>
     </Container>
   );
 }

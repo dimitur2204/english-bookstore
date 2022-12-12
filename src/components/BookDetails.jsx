@@ -1,7 +1,7 @@
-import {Box, Button, Chip, SwipeableDrawer, Typography} from "@mui/material";
+import {Box, Chip, SwipeableDrawer, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {Bookmark, BookmarkBorderOutlined, Close} from "@mui/icons-material";
-import {cloneDeep, isEqual} from "lodash";
+import {capitalize, cloneDeep, isEqual} from "lodash";
 import BuyBook from "./BuyBook";
 
 function BookDetails({book, isOpen, closeDetails}) {
@@ -65,10 +65,10 @@ function BookDetails({book, isOpen, closeDetails}) {
           <Close fontSize="medium" onClick={closeDetails}/>
         </Box>
 
-        <img src={book.img} width="100%" height="350" style={{objectFit: 'cover'}}/>
+        <img src={book.image} alt={book.item_title} width="100%" height="350" style={{objectFit: 'cover'}}/>
 
         <Box display="flex" justifyContent="space-between">
-          <Typography fontWeight='600' lineHeight="1.8rem" fontSize="1.8rem" mt={0.5} color="#202504">{book.title}</Typography>
+          <Typography fontWeight='600' lineHeight="1.8rem" fontSize="1.8rem" mt={0.5} color="#202504">{book.item_title}</Typography>
 
           {isBookmarked ?
             <Bookmark fontSize="large" onClick={toggleIsBookmarked}/>
@@ -80,11 +80,11 @@ function BookDetails({book, isOpen, closeDetails}) {
           by {book.author}
         </Typography>
 
-        {!!book.genres?.length && <Box>
+        {!!book.genres && <Box>
           <Typography fontSize="1rem" color="#202504">Genres</Typography>
 
           <Box display="flex" gap={1}>
-            {book.genres?.map((genre) => (<Chip label={genre} variant="outlined" style={{borderRadius: 4}} />))}
+            <Chip label={capitalize(book.genres)} variant="outlined" style={{borderRadius: 4}} />
           </Box>
         </Box>
         }

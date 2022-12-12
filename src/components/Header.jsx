@@ -1,5 +1,4 @@
 /*
-Dimitar Nizamov
 
 This is the Header component that is used throughout the app
 It renders the text prop that is passed to it as a title
@@ -35,7 +34,7 @@ export default function Header({
       as="header"
     >
       {withBackButton ? <BackButton onClick={() => navigate(-1)} /> : null}
-      {/* code for header for when it contains a search bar or account menu (the three dots) */}
+      {/* code for header for when it contains a search bar */}
       <Typography variant="h1" sx={{ marginTop: theme.spacing(1) }}>
         {titleArray?.length === 2 ? (
           <>

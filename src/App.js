@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import Layout from "./components/Layout";
 import { useNavigate } from "react-router-dom";
-
 function App({ children }) {
   const navigate = useNavigate();
   React.useEffect(() => {

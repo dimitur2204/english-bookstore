@@ -1,7 +1,6 @@
 /*
-Carl Christiansen
 
-Creating the items under the bids/watched section as objects.
+Creating the genres/categories section as objects.
 */
 
 export const itemData1 = [
