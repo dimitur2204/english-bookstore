@@ -4,7 +4,7 @@ import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
 import { Container, Box, InputAdornment,Input, IconButton,} from "@mui/material";
 import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
-import CategoryList from "../components/CategoryList";
+import CategoryList from "../components/search/CategoryList";
 
 // Search page that is made to list genres/categories for items
 function Search() {
