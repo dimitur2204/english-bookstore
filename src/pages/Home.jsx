@@ -103,7 +103,7 @@ function WishlistCTA() {
   return (
     <Paper
       sx={{
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: "#2F2E41",
         borderRadius: "29px",
         p: 4,
         mb: `calc(72px + ${theme.spacing(2)})`,
@@ -115,7 +115,7 @@ function WishlistCTA() {
       </Typography>
       <Typography color="rgba(255,255,255,0.8)" mb={3}>
         With our{" "}
-        <Link style={{ color: "rgba(255,255,255,0.8)" }}>wishlist</Link> you can
+        <Link style={{ color: "rgba(255,255,255,0.8)" }} to={"./wishlist"}>wishlist</Link> you can
         wish for a book that you want us to get on the shelves
       </Typography>
       <Box display="flex" justifyContent="space-between">
@@ -144,7 +144,9 @@ function WishlistCTA() {
           </Typography>
         </Box>
         <IconButton>
+          <Link to={"./wishlist"}>
           <East sx={{ fill: theme.palette.common.white }} />
+          </Link>
         </IconButton>
       </Box>
     </Paper>
