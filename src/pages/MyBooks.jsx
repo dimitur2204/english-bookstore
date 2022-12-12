@@ -5,6 +5,7 @@ import { thisWeeksBoooks } from '../components/booksList'
 import Header from '../components/Header'
 import theme from '../theme'
 
+// MyBook page that displays the books one has purchased as well as books one saves
 function MyBooks() {
   return (
     <>

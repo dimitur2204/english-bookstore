@@ -1,22 +1,13 @@
-/*
-Carl Christiansen
-
-The main bids page that renders when you access /bids,
-Renders the section where the items that the user bidded on or chose to "watch" (the eye icon),
-Also renders the tabs component that allows the user to switch between the different tabs (bids, watched).
-*/
-
 import React from "react";
 import { Tab, TabList, Tabs, TabPanel } from "@mui/joy";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
 import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
-import { Container, Typography, Box, InputAdornment,Input, IconButton,} from "@mui/material";
+import { Container, Box, InputAdornment,Input, IconButton,} from "@mui/material";
 import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
-import CategoryList from '../components/search/CategoryList'
-// Bidding page that is made up of Header + ButtonTabs component
-function Bids() {
+import CategoryList from "../components/CategoryList";
+
+// Search page that is made to list genres/categories for items
+function Search() {
   const [value, setValue] = React.useState('');
   const [index,setIndex] = React.useState(0);
   return (
@@ -28,7 +19,7 @@ function Bids() {
         <IconButton sx={{ pl: 0 }} color="primary">
           <CloseIcon />
         </IconButton>
-        {/* white box for typing what users search for */}
+        {/* a box for typing what users search for */}
         <Input
           endAdornment={
             <InputAdornment position="end">
@@ -55,6 +46,7 @@ function Bids() {
         sx={{backgroundColor: theme.palette.background.default}}
       >
         <TabList variant="soft">
+          {/* tab of Books */}
           <Tab
           sx={{borderRadius: 1000}}
             variant={index === 0 ? "solid" : "plain"}
@@ -63,6 +55,7 @@ function Bids() {
           >
             Books
           </Tab>
+          {/* tab of miscellaneous items */}
           <Tab
             sx={{borderRadius: 1000}}
             variant={index === 1 ? "solid" : "plain"}
@@ -85,4 +78,4 @@ function Bids() {
   );
 }
 
-export default Bids;
+export default Search;

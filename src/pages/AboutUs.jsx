@@ -1,7 +1,3 @@
-/*Carl Christiansen
-
-*/
-
 import React from "react";
 import Header from "../components/Header";
 import theme from "../theme";
@@ -19,25 +15,25 @@ function AboutUs() {
           mb: `calc(72px + ${theme.spacing(2)})`,
           marginY: 4,
         }}
+        // info about how purchasing a book works
       >
         <Typography fontWeight="bold" color={theme.palette.common.white} mb={1}>
           How to get your book{" "}
         </Typography>
         <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          Currently, we can only reserve an item for you after we received your
-          payment and your appointment request.
+          Currently, we can only reserve an item for you after receiving
+          payment and appointment request.
         </Typography>
         <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          Therefore, right after you pay for the wished item, you will submit a
-          form with the time and date for coming at the store and picking up the
+          Therefore, after MobilPaying, please submit a
+          form with the desired date and time for picking up the
           item.
         </Typography>
         <Typography color="rgba(255,255,255,0.8)" mb={3}>
-          You will also need the transaction ID from MobilePay which is needed
-          in order to verify the purchase.
+          Remember the transaction ID from MobilePay is needed in order to verify the purchase.
         </Typography>
       </Paper>
-
+      {/* inserting a pin on a map to display the location of the physical shop */}
       <div style={{ marginBottom: "150px" }}>
         <iframe
           title="yes"
