@@ -26,6 +26,10 @@ export const itemData1 = [
   },
   {
     img: `${process.env.PUBLIC_URL}/category-6.jpg`,
+    title: "Danish",
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/category-7.jpg`,
     title: "Others",
   },
 ];
