@@ -1,5 +1,4 @@
 /*
-Dimitar Nizamov
 
 This is the bottom navigation of the page that renders on every page
 It is made up of the <BottomNavigation /> component from Material UI
