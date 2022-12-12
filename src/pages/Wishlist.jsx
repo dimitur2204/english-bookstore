@@ -21,12 +21,13 @@ function Wishlist() {
 
   return (
     <Container>
-      <Header text="Your wishes" />
+      <Header
+       text="Your wishes" />
       <Box position="relative">
-        <img src={`${process.env.PUBLIC_URL}/wishlist.svg`} width={125} />
+        <img src={`${process.env.PUBLIC_URL}/wishlist.svg`} width={155} style={{ marginTop: "4rem" }} />
         <Box
           position="absolute"
-          top={-20}
+          top={20}
           left={150}
           display="flex"
           alignItems="center"
@@ -34,7 +35,7 @@ function Wishlist() {
         >
           <img
             src={`${process.env.PUBLIC_URL}/talk-buble.svg`}
-            style={{ margin: "-40px" }}
+            style={{ margin: "-50px" }}
             width={250}
           />
           <Typography

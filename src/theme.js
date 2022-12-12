@@ -44,7 +44,7 @@ const theme = createTheme({
     h1: {
       marginTop: "1.5rem",
       fontFamily: ["scotch-display, serif"],
-      fontSize: "2.1rem",
+      fontSize: "2.4rem",
       fontWeight: 600,
     },
 

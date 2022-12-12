@@ -29,6 +29,7 @@ export default function Header({
         justifyContent: "space-between",
         my: theme.spacing(1),
         alignItems: "center",
+        marginTop:"2rem",
         ...sx,
       }}
       as="header"
@@ -39,7 +40,7 @@ export default function Header({
         {titleArray?.length === 2 ? (
           <>
             {titleArray[0]}{" "}
-            <span style={{ color: theme.palette.primary.main }}>
+            <span>
               {titleArray[1]}
             </span>
           </>

@@ -9,7 +9,7 @@ function MyBooks() {
     JSON.parse(localStorage.getItem("savedBooks")) || [];
   return (
     <>
-      <Header text="My books" />
+      <Header text="Your books" />
       <Container>
         <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
           Purchased
