@@ -54,13 +54,13 @@ function Wishlist() {
       </Box>
 
       {/* a condition that states if no books are added to a wishlist, the sentence below will be displayed*/}
+      {/*if a book is added to a wishlist, it will be displayed as an wishlist item*/}
       <Stack spacing={2} mt={3}>
         {wishlistBooks.length === 0 ? (
           <Typography textAlign="center" fontSize="1.1rem">
             You have no books in your wishlist. Why don't you add something and
             wait while I'm doing my magic finding the book?
           </Typography>
-           {/*if a book is added to a wishlist, it will be displayed as an wishlist item*/}
         ) : (
           wishlistBooks.map((item) => (
             <WishlistItem
@@ -69,6 +69,7 @@ function Wishlist() {
               author={item.author}
             />
           ))
+          
         )}
       </Stack>
 
