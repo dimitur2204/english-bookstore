@@ -17,6 +17,8 @@ function MyBooks() {
         <Book height={220} book={item} key={item.img} />
       ))
     : null;
+
+    // if books are put into a category, they will appear there. 
   return (
     <>
       <Header text={capitalize(category)} />
@@ -25,6 +27,7 @@ function MyBooks() {
           <ImageList cols={2} gap={16}>
             {booksToRender}
           </ImageList>
+          // if no books are put into a category, the text below will be displayed
         ) : (
           <Typography>No books in this category yet!</Typography>
         )}

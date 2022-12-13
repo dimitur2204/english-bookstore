@@ -1,5 +1,4 @@
 /*
-
 This is the home page of the app
 */
 import React from "react";
@@ -25,6 +24,7 @@ function FeaturedBook({ book }) {
       <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
         Our choice
       </Typography>
+      {/* grid for the book of Our choice */}
       <Grid2 container spacing={2}>
         <Grid2 xs={6}>
           <img
@@ -34,9 +34,11 @@ function FeaturedBook({ book }) {
           />
         </Grid2>
         <Grid2 xs={6}>
+          {/* title of the specific book */}
           <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>
             {book?.item_title}
           </Typography>
+          {/* author of the specific book */}
           <Typography
             fontWeight="light"
             color="rgba(0,0,0,0.5)"
@@ -54,6 +56,7 @@ function FeaturedBook({ book }) {
             12 people wish for that
           </Typography>
           <Box>
+            {/* star components that rate a book */}
             <Star
               fontSize="medium"
               sx={{ color: theme.palette.primary.main }}
@@ -90,6 +93,7 @@ function FeaturedBook({ book }) {
               GoodReads
             </a>
           </Typography>
+          {/* price of the specific book */}
           <Typography fontWeight="bold" fontSize="1.5rem" mt={1}>
             {book?.price} dkk
           </Typography>
@@ -152,7 +156,8 @@ function WishlistCTA() {
     </Paper>
   );
 }
-// an svg image of a woman reading a book, placed on top of the page
+
+// filtering what books belong to Week choice/Our choice
 export default function Home() {
   const { response: books } = useBooks();
   const featuredBook = books?.find((b) => b["is-our-choice"]);
@@ -160,6 +165,7 @@ export default function Home() {
     (b) => b.isweekchoice && b["is-our-choice"] === false
   );
   return (
+    // an svg image of a woman reading a book, placed on top of the page
     <Container>
       <Header withSearch sx={{ marginBottom: theme.spacing(-13) }} />
       <img

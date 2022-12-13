@@ -11,12 +11,14 @@ function MyBooks() {
     <>
       <Header text="Your books" />
       <Container>
+        {/* a section where books you have paid for are stored */}
         <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
           Purchased
         </Typography>
         <Typography cols={2} gap={16}>
           No books purchased yet!
         </Typography>
+         {/* a section where books you have saved are stored */}
         <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
           Saved
         </Typography>

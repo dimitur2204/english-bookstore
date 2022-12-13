@@ -33,6 +33,7 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
+// routes that link to each page
 const createRoutes = () =>
   createRoutesFromElements(
     <>
