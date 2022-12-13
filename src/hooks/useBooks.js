@@ -1,3 +1,4 @@
+// importing Wordpress json where books, their titles and authors are stored
 import { useState, useEffect } from "react";
 export const WP_API_URL =
   "https://english-bookstore.dimtar-nizamov.dk/wp-json/wp/v2";
@@ -10,6 +11,7 @@ export const useBooks = (options) => {
     const signal = abortController.signal;
     const doFetch = async () => {
       setLoading(true);
+      //Inside Wordpress under items, books are put
       try {
         const res = await fetch(`${WP_API_URL}/items`, options);
         const json = await res.json();

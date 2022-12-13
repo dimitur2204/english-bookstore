@@ -19,10 +19,12 @@ function Wishlist() {
     setWishlistBooks(wishlistBooksStorage);
   };
 
+  
   return (
     <Container>
       <Header
        text="Your wishes" />
+       {/* the svg on top of the page */}
       <Box position="relative">
         <img src={`${process.env.PUBLIC_URL}/wishlist.svg`} width={155} style={{ marginTop: "4rem" }} />
         <Box
@@ -33,11 +35,13 @@ function Wishlist() {
           alignItems="center"
           justifyContent="center"
         >
+          {/* the bubble that works as a background for the text */}
           <img
             src={`${process.env.PUBLIC_URL}/talk-buble.svg`}
             style={{ margin: "-50px" }}
             width={250}
           />
+          {/* text inside the bubble */}
           <Typography
             position="absolute"
             left={10}
@@ -49,12 +53,14 @@ function Wishlist() {
         </Box>
       </Box>
 
+      {/* a condition that states if no books are added to a wishlist, the sentence below will be displayed*/}
       <Stack spacing={2} mt={3}>
         {wishlistBooks.length === 0 ? (
           <Typography textAlign="center" fontSize="1.1rem">
             You have no books in your wishlist. Why don't you add something and
             wait while I'm doing my magic finding the book?
           </Typography>
+           {/*if a book is added to a wishlist, it will be displayed as an wishlist item*/}
         ) : (
           wishlistBooks.map((item) => (
             <WishlistItem
@@ -66,6 +72,7 @@ function Wishlist() {
         )}
       </Stack>
 
+      {/* if a user adds a book to the wishlist, it will save them into a local storage of the device*/}
       <AddBookToWishlist handleAddBook={getBooksFromStorage} />
     </Container>
   );

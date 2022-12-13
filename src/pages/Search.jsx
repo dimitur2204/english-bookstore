@@ -72,8 +72,10 @@ function Search() {
             </Tab>
           </TabList>
           <TabPanel value={0}>
+            {/* itemData1 = book genres */}
             <CategoryList list={itemData1} />
           </TabPanel>
+          {/* itemData2 = miscelleanous items */}
           <TabPanel value={1}>
             <CategoryList list={itemData2} />
           </TabPanel>
