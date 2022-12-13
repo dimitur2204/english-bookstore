@@ -134,3 +134,4 @@ function BookDetails({ book, isOpen, closeDetails }) {
 }
 
 export default BookDetails;
+

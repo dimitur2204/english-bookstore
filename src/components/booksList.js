@@ -1,5 +1,4 @@
 /*
-
 Creating the genres/categories section as objects.
 */
 
@@ -34,6 +33,7 @@ export const itemData1 = [
   },
 ];
 
+// Here are all the items for miscelleanous section
 export const itemData2 = [
   {
     img: `${process.env.PUBLIC_URL}/Puzzles.jpg`,
@@ -53,6 +53,7 @@ export const itemData2 = [
   },
 ];
 
+//here are stored books marked as a This Week books
 export const thisWeeksBoooks = [
   {
     img: `${process.env.PUBLIC_URL}/this-week-books/book1.jpg`,

@@ -36,6 +36,7 @@ export default function BottomNavigation() {
         }}
         sx={{ py: theme.spacing(1) }}
       >
+        {/* navbar icon HOME */}
         <BottomNavigationAction
           icon={
             <HomeIcon
@@ -50,7 +51,7 @@ export default function BottomNavigation() {
           component={RouterLink}
           to="/"
         />
-
+        {/* navbar icon SEARCH */}
         <BottomNavigationAction
           icon={
             <SearchIcon
@@ -66,7 +67,7 @@ export default function BottomNavigation() {
           component={RouterLink}
           to="/search"
         />
-
+        {/* navbar icon WISHLIST */}
         <BottomNavigationAction
           icon={
             <AutoFixHighIcon
@@ -83,7 +84,7 @@ export default function BottomNavigation() {
           component={RouterLink}
           to="/wishlist"
         />
-
+        {/* navbar icon MY BOOKS */}
         <BottomNavigationAction
           icon={
             <LocalLibraryIcon
@@ -100,7 +101,7 @@ export default function BottomNavigation() {
           component={RouterLink}
           to="/my-books"
         />
-
+        {/* navbar icon INFO */}
         <BottomNavigationAction
           icon={
             <InfoIcon

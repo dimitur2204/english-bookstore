@@ -16,6 +16,7 @@ const AddBookToWishlist = ({ handleAddBook }) => {
     handleChange("author")("");
   };
 
+  //when a user adds a book into the wishlist, it gets automatically saved into the local storage of their device
   const onAddBook = () => {
     const currentWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
@@ -26,11 +27,13 @@ const AddBookToWishlist = ({ handleAddBook }) => {
     resetForm();
     handleAddBook();
 
+    //a toast appears when someone adds a book into the wishlist
     toast("Added book to your wishlist successfully!", { type: "success" });
   };
 
   return (
     <>
+    {/* an icon for adding a wished book */}
       <Box textAlign="center" mt={4}>
         <img
           src={`${process.env.PUBLIC_URL}/add-wishlist-icon.svg`}
@@ -50,6 +53,7 @@ const AddBookToWishlist = ({ handleAddBook }) => {
           Add a book to your wishlist!
         </Typography>
         <Stack spacing={3}>
+          {/* text field to add a title */}
           <TextField
             value={formDetails.title}
             onChange={handleChange("title")}
@@ -58,6 +62,7 @@ const AddBookToWishlist = ({ handleAddBook }) => {
             variant="filled"
             fullWidth
           />
+          {/* text field to add an author */}
           <TextField
             value={formDetails.author}
             onChange={handleChange("author")}
@@ -68,6 +73,7 @@ const AddBookToWishlist = ({ handleAddBook }) => {
           />
         </Stack>
 
+        {/* an icon for submitting the wish */}
         <Box textAlign="center" mt={3}>
           <Button variant="contained" size="large" onClick={onAddBook}>
             Submit

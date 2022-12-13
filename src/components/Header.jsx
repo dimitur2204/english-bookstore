@@ -56,6 +56,7 @@ export default function Header({
         </Link>
       ) : null}
       {withXButton ? (
+        // X icon for closure
         <IconButton
           position="end"
           aria-label="cross"

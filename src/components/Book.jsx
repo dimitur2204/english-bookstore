@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import BookDetails from "./BookDetails";
 import styled from "@emotion/styled";
 
+//LineClamp typography means breaking the text into 2 lines if its too long
 const LineClampTypography = styled(Typography)`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -17,6 +18,7 @@ function Book({ book, height }) {
 
   return (
     <>
+    {/* an img for each book */}
       <ImageListItem onClick={() => setDetailsAreOpen(true)}>
         <img
           src={`${book.image}`}
@@ -28,6 +30,7 @@ function Book({ book, height }) {
             objectFit: "cover",
           }}
         />
+        {/* a title of each book */}
         <LineClampTypography
           fontWeight="600"
           lineHeight="1.2rem"
@@ -36,6 +39,7 @@ function Book({ book, height }) {
         >
           {book.item_title}
         </LineClampTypography>
+        {/* an author for each book */}
         <LineClampTypography
           fontWeight="light"
           color="rgba(0,0,0,0.5)"
@@ -45,6 +49,7 @@ function Book({ book, height }) {
         >
           {book.author}
         </LineClampTypography>
+        {/* a price for each book */}
         <Typography
           fontWeight="light"
           lineHeight={1.2}
