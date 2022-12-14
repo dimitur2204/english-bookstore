@@ -11,12 +11,15 @@ function BooksList({ books }) {
     return [firstThree, rest];
   }, [books]);
 
+
+  //displaying this week's books + 
   return (
     <>
       <Box display="flex" justifyContent="space-between">
         <Typography fontWeight="bold" fontSize="1.5rem" mb={1}>
           This week's
         </Typography>
+        {/* A button to either See all or See less, based on what button was clicked previously, if any */}
         <Button onClick={() => setAll(!all)} variant="text">
           See {all ? "less" : "all"}
         </Button>
@@ -25,6 +28,7 @@ function BooksList({ books }) {
         {thisWeeksBoooks.map((item) => (
           <Book book={item} key={item.id} />
         ))}
+        {/* mapping through book item and book item id*/}
         {all &&
           thisWeeksBooksMore.map((item) => <Book book={item} key={item.id} />)}
       </ImageList>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// when users change key for text, key value gets replaced by the input of the user, reusable
 const useFormDetails = (formObject) => {
   const [formDetails, setFormDetails] = useState(formObject);
 

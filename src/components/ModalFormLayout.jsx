@@ -2,6 +2,7 @@ import { Box, Modal } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import React from "react";
 
+//a template that works as a layout both for WishList and BuyABook (the white box)
 function ModalFormLayout({ open, handleCloseModal, children }) {
   return (
     <Modal open={open} onClose={handleCloseModal}>

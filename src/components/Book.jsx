@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import BookDetails from "./BookDetails";
 import styled from "@emotion/styled";
 
-//LineClamp typography means breaking the text into 2 lines if its too long
+//LineClamp typography adds 3 dots if it reaches more than two lines of code
 const LineClampTypography = styled(Typography)`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

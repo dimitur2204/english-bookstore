@@ -4,9 +4,11 @@ import { Bookmark, BookmarkBorderOutlined, Close } from "@mui/icons-material";
 import { capitalize, cloneDeep, isEqual } from "lodash";
 import BuyBook from "./BuyBook";
 
+// A function that handles saving a book as liked books
 function BookDetails({ book, isOpen, closeDetails }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  //if users open book details, they can see if a book is saved or not (book mark icon is filled or empty)
   useEffect(() => {
     if (isOpen) {
       const currentlySavedBooks = JSON.parse(
@@ -21,6 +23,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
     }
   }, [isOpen]);
 
+  //copy of objects to prevent mutation of the previous objects 
   const cloneBooks = (booksToClone) => {
     return cloneDeep(
       !booksToClone || booksToClone.length === 0 ? [] : booksToClone
@@ -39,9 +42,11 @@ function BookDetails({ book, isOpen, closeDetails }) {
         isEqual(book, bookStorage)
       );
 
+      //if there is no saved book in the local storage yet and user saves a book, it will be automatically saved as the first book
       if (isBookmarked) {
         if (savedBooks.length === 0) {
           savedBooks = [book];
+          //if a user deletes a book from the saved section, the created gap automatically disappears, books are pushed
         } else {
           bookIndex === -1 && savedBooks.push(book);
         }
@@ -68,6 +73,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
           <Close fontSize="medium" onClick={closeDetails} />
         </Box>
 
+        {/* space for a book cover */}
         <img
           src={book.image}
           alt={book.item_title}
@@ -77,6 +83,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
         />
 
         <Box display="flex" justifyContent="space-between">
+          {/* space for a book title */}
           <Typography
             fontWeight="600"
             lineHeight="1.8rem"
@@ -96,7 +103,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
             />
           )}
         </Box>
-
+        {/* space for a book author */}
         <Typography
           fontWeight="light"
           color="rgba(0,0,0,0.5)"
@@ -107,6 +114,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
           by {book.author}
         </Typography>
 
+        {/* if book has no genre assigned, the genre (empty) will not appear in the book details */}
         {!!book.genres && (
           <Box>
             <Typography fontSize="1rem" color="#202504">
@@ -122,7 +130,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
             </Box>
           </Box>
         )}
-
+     {/* space for a book price */}
         <Typography mt={1.5} mb={3.5}>
           Price: {book.price} DKK
         </Typography>

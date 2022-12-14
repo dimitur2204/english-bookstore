@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import useFormDetails from "../hooks/useFormDetails";
 import { toast } from "react-toastify";
 
+//handles adding book to a wishlist, where user can write themselves the author and the title of books
 const AddBookToWishlist = ({ handleAddBook }) => {
   const [isAddBookOpen, setIsAddBookOpen] = useState(false);
   const [formDetails, handleChange] = useFormDetails({

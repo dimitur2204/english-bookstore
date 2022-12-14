@@ -17,6 +17,7 @@ function BuyBook() {
 
   return (
     <>
+      {/* when clicking the buy now button, a form appears */}
       <Button
         variant="contained"
         fullWidth
@@ -24,6 +25,7 @@ function BuyBook() {
       >
         Buy now
       </Button>
+      {/* when users dont want to continue to finish the payment, they have the option to close the modal */}
       <ModalFormLayout
         open={isBuyingBook}
         handleCloseModal={() => setIsBuyingBook(false)}
@@ -38,7 +40,9 @@ function BuyBook() {
           MobilePay: 01234567
         </Typography>
 
+        
         <Stack spacing={3}>
+          {/* a field to input user's name */}
           <TextField
             value={formDetails.name}
             onChange={handleChange("name")}
@@ -47,6 +51,8 @@ function BuyBook() {
             variant="filled"
             fullWidth
           />
+
+          {/* a field to input user's email */}
           <TextField
             value={formDetails.email}
             onChange={handleChange("email")}
@@ -55,6 +61,7 @@ function BuyBook() {
             variant="filled"
             fullWidth
           />
+          {/* a field to input user's phone number */}
           <TextField
             value={formDetails.phoneNumber}
             onChange={handleChange("phoneNumber")}
@@ -63,6 +70,7 @@ function BuyBook() {
             variant="filled"
             fullWidth
           />
+          {/* a field to input user's payment ID */}
           <TextField
             value={formDetails.paymentID}
             onChange={handleChange("paymentID")}
@@ -71,6 +79,7 @@ function BuyBook() {
             variant="filled"
             fullWidth
           />
+          {/* a field to choose date to pick up a book */}
           <DatePicker
             value={formDetails.dateToCome}
             onChange={handleChange("dateToCome")}
@@ -80,6 +89,7 @@ function BuyBook() {
           />
         </Stack>
 
+        {/* a button to submit the information */}
         <Box textAlign="center" mt={3}>
           <Button variant="contained" size="large">
             Submit
