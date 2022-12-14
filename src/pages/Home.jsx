@@ -16,7 +16,7 @@ import {
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
-import { useBooks } from "../hooks/useBooks";
+import {useBookContext} from "../context/BookContext";
 // A chosen book that is recommended by us
 function FeaturedBook({ book }) {
   return (
@@ -159,7 +159,7 @@ function WishlistCTA() {
 
 // filtering what books belong to Week choice/Our choice
 export default function Home() {
-  const { response: books } = useBooks();
+  const { books } = useBookContext();
   const featuredBook = books?.find((b) => b["is-our-choice"]);
   const thisWeeksBooks = books?.filter(
     (b) => b.isweekchoice && b["is-our-choice"] === false

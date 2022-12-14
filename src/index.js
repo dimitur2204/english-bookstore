@@ -10,6 +10,7 @@ import createRoutes from "./Routes";
 import { CssVarsProvider } from "@mui/joy/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import BookContext from "./context/BookContext";
 
 const router = createBrowserRouter(createRoutes(), {
   basename: "/english-bookstore",
@@ -21,7 +22,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssVarsProvider theme={deepmerge(joyTheme, muiTheme)}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <RouterProvider router={router} />
+          <BookContext>
+            <RouterProvider router={router} />
+          </BookContext>
         </LocalizationProvider>
       </CssVarsProvider>
     </ThemeProvider>

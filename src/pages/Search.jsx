@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import { Tab, TabList, Tabs, TabPanel } from "@mui/joy";
 import { itemData1, itemData2 } from "../components/booksList";
 import theme from "../theme";
@@ -11,11 +11,22 @@ import {
 } from "@mui/material";
 import { Search as SearchIcon, Close as CloseIcon } from "@mui/icons-material";
 import CategoryList from "../components/search/CategoryList";
+import {useBookContext} from "../context/BookContext";
+import BooksList2Cols from "../components/BooksList2Cols";
 
 // Search page that is made to list genres/categories for items
 function Search() {
+  const {books} = useBookContext()
+
   const [value, setValue] = React.useState("");
   const [index, setIndex] = React.useState(0);
+
+  const filteredBooks = useMemo(() =>
+    books.filter(
+      (book) => book.author.toLowerCase().includes(value) || book.item_title.toLowerCase().includes(value))
+    , [value])
+
+  console.log(filteredBooks)
   return (
     <div>
       <Container>
@@ -71,14 +82,23 @@ function Search() {
               Miscellaneous
             </Tab>
           </TabList>
-          <TabPanel value={0}>
-            {/* itemData1 = book genres */}
-            <CategoryList list={itemData1} />
-          </TabPanel>
-          {/* itemData2 = miscelleanous items */}
-          <TabPanel value={1}>
-            <CategoryList list={itemData2} />
-          </TabPanel>
+          {value ? (
+              <BooksList2Cols
+                books={filteredBooks}
+                noBooksText="No books found  with your search query. Try writing a diffrent title" />)
+            : (
+              <>
+                <TabPanel value={0}>
+                  {/* itemData1 = book genres */}
+                  <CategoryList list={itemData1} />
+                </TabPanel>
+                <TabPanel value={1}>
+                  {/* itemData2 = miscelleanous items */}
+                  <CategoryList list={itemData2} />
+                </TabPanel>
+              </>
+            )}
+
         </Tabs>
       </Container>
     </div>
