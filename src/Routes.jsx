@@ -7,7 +7,6 @@ It also renders certain routes within the App component which is the layout comp
 import React from "react";
 import {
   createRoutesFromElements,
-  Navigate,
   Outlet,
   Route,
 } from "react-router-dom";
@@ -18,6 +17,7 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import MyBooks from "./pages/MyBooks";
+import BooksByCategory from './pages/BooksByCategory'
 
 // routes that link to each page
 const createRoutes = () =>
@@ -36,7 +36,7 @@ const createRoutes = () =>
         <Route path="search" element={<Search />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="my-books" element={<MyBooks />} />
-        <Route path="/category/:category" element={<Home />} />
+        <Route path="/category/:category" element={<BooksByCategory />} />
         <Route path="wishlist" element={<Wishlist />} />
       </Route>
       <Route path="landing" element={<Landing />} />
