@@ -72,14 +72,14 @@ function Search() {
             >
               Books
             </Tab>
-            {/* tab of miscellaneous items */}
+            {/* tab of other items */}
             <Tab
               sx={{ borderRadius: 1000 }}
               variant={index === 1 ? "solid" : "plain"}
               color={index === 1 ? "primary" : "neutral"}
               style={{ color: index === 1 && "white" }}
             >
-              Miscellaneous
+              Other
             </Tab>
           </TabList>
           {value ? (

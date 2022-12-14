@@ -114,13 +114,15 @@ function WishlistCTA() {
       }}
     >
       <Typography fontWeight="bold" color={theme.palette.common.white} mb={1}>
-        Do you have a wish{" "}
+        Do you have a wish?{" "}
         <AutoAwesomeIcon sx={{ fill: theme.palette.common.white }} />
       </Typography>
       <Typography color="rgba(255,255,255,0.8)" mb={3}>
-        With our{" "}
-        <Link style={{ color: "rgba(255,255,255,0.8)" }} to={"./wishlist"}>wishlist</Link> you can
-        wish for a book that you want us to get on the shelves
+        Here you can{" "}
+        <Link style={{ color: "rgba(255,255,255,0.8)" }} to={"./wishlist"}>
+          wish
+        </Link>{" "}
+        for a book that you want us to get on the shelves
       </Typography>
       <Box display="flex" justifyContent="space-between">
         <Box sx={{ textAlign: "center" }}>
@@ -149,7 +151,7 @@ function WishlistCTA() {
         </Box>
         <IconButton>
           <Link to={"./wishlist"}>
-          <East sx={{ fill: theme.palette.common.white }} />
+            <East sx={{ fill: theme.palette.common.white }} />
           </Link>
         </IconButton>
       </Box>

@@ -80,7 +80,7 @@ export default function BottomNavigation() {
               }}
             />
           }
-          label={<NavLabel label="Wishlist" />}
+          label={<NavLabel label="Wish" />}
           component={RouterLink}
           to="/wishlist"
         />
