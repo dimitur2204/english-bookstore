@@ -11,27 +11,13 @@ import {
   Outlet,
   Route,
 } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
 import App from "./App";
-import firebaseApp from "./firebase-config";
 import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import MyBooks from "./pages/MyBooks";
-
-const auth = getAuth(firebaseApp);
-
-const ProtectedRoute = ({ children }) => {
-  const [user] = useAuthState(auth);
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return children;
-};
 
 // routes that link to each page
 const createRoutes = () =>
@@ -50,7 +36,7 @@ const createRoutes = () =>
         <Route path="search" element={<Search />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="my-books" element={<MyBooks />} />
-        <Route path=":category" element={<Home />} />
+        <Route path="/category/:category" element={<Home />} />
         <Route path="wishlist" element={<Wishlist />} />
       </Route>
       <Route path="landing" element={<Landing />} />
