@@ -29,11 +29,11 @@ export const itemData1 = [
   },
   {
     img: `${process.env.PUBLIC_URL}/category-7.jpg`,
-    title: "Others",
+    title: "More",
   },
 ];
 
-// Here are all the items for miscelleanous section
+// Here are all the items for other section
 export const itemData2 = [
   {
     img: `${process.env.PUBLIC_URL}/Puzzles.jpg`,
@@ -49,7 +49,7 @@ export const itemData2 = [
   },
   {
     img: `${process.env.PUBLIC_URL}/Others.jpg`,
-    title: "Others",
+    title: "More",
   },
 ];
 
