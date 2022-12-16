@@ -17,7 +17,7 @@ export default function LandingPage() {
       style={{
         height: "100vh",
         width: "100%",
-        backgroundImage: `url(${process.env.PUBLIC_URL}/background-welcome.png)`,
+        background:"#FAF1E1",
         position: "relative",
         overflow: "hidden",
         backgroundRepeat: "no-repeat",
@@ -41,12 +41,12 @@ export default function LandingPage() {
           style={{ width: "80%" }}
           src={`${process.env.PUBLIC_URL}/logo.webp`}
         ></img>
-        <Typography variant="h2" style={{ color: "white", fontSize: "2.7rem" }}>
-          Welcome!
+        <Typography variant="h2" style={{color: "black", fontSize: "2.7rem" }}>
+          I am Beth!
         </Typography>
-        <Typography style={{ textAlign: "center", color: "white" }}>
-          Are you a book enthusiast? What about puzzles? Do you also care about
-          sustainable shopping? Then you've come to the right place!
+        <Typography style={{ textAlign: "center" }}>
+        Are you a book enthusiast? What about puzzles? 
+Does reuse of secondhand books sound appealing to you? Then you've come to the right place!
         </Typography>
 
         {/* button to continue to Home */}
