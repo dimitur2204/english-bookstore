@@ -1,7 +1,7 @@
 /*
 This is the home page of the app
 */
-import React from "react";
+import React, {useState} from "react";
 import Header from "../components/Header";
 import theme from "../theme";
 import BooksList from "../components/BooksList.jsx";
@@ -17,8 +17,11 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Link } from "react-router-dom";
 import { East, Star, StarBorder, StarHalf } from "@mui/icons-material";
 import {useBookContext} from "../context/BookContext";
+import BookDetails from "../components/BookDetails";
 // A chosen book that is recommended by us
 function FeaturedBook({ book }) {
+  const [bookDetailsAreOpen, setBookDetailsAreOpen] = useState(false)
+
   return (
     <Box my={2}>
       <Typography fontWeight="bold" fontSize="1.5rem" mb={2}>
@@ -28,10 +31,12 @@ function FeaturedBook({ book }) {
       <Grid2 container spacing={2}>
         <Grid2 xs={6}>
           <img
+            onClick={() => setBookDetailsAreOpen(true)}
             src={book?.image}
             style={{ width: "100%" }}
             alt={book?.item_title}
           />
+          <BookDetails book={book} isOpen={bookDetailsAreOpen} closeDetails={() => setBookDetailsAreOpen(false)}/>
         </Grid2>
         <Grid2 xs={6}>
           {/* title of the specific book */}
