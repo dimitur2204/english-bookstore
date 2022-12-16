@@ -19,7 +19,8 @@ export default function LandingPage() {
         width: "100%",
         background:"#FAF1E1",
         position: "relative",
-        overflow: "hidden",
+        overflowX: "hidden",
+        overflowY: "auto",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
