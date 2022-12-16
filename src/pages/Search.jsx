@@ -23,7 +23,7 @@ function Search() {
 
   const filteredBooks = useMemo(() =>
     books.filter(
-      (book) => book.author.toLowerCase().includes(value) || book.item_title.toLowerCase().includes(value))
+      (book) => book.author.toLowerCase().includes(value.toLowerCase()) || book.item_title.toLowerCase().includes(value.toLowerCase()))
     , [value])
 
   console.log(filteredBooks)
