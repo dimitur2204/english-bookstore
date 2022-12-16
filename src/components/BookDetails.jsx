@@ -75,8 +75,8 @@ function BookDetails({ book, isOpen, closeDetails }) {
 
         {/* space for a book cover */}
         <img
-          src={book.image}
-          alt={book.item_title}
+          src={book?.image}
+          alt={book?.item_title}
           width="100%"
           height="350"
           style={{ objectFit: "cover" }}
@@ -91,7 +91,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
             mt={0.5}
             color="#202504"
           >
-            {book.item_title}
+            {book?.item_title}
           </Typography>
 
           {isBookmarked ? (
@@ -111,11 +111,11 @@ function BookDetails({ book, isOpen, closeDetails }) {
           fontSize="1rem"
           mb={2}
         >
-          by {book.author}
+          by {book?.author}
         </Typography>
 
         {/* if book has no genre assigned, the genre (empty) will not appear in the book details */}
-        {!!book.genres && (
+        {!!book?.genres && (
           <Box>
             <Typography fontSize="1rem" color="#202504">
               Genres
@@ -123,7 +123,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
 
             <Box display="flex" gap={1}>
               <Chip
-                label={capitalize(book.genres)}
+                label={capitalize(book?.genres)}
                 variant="outlined"
                 style={{ borderRadius: 4 }}
               />
@@ -132,7 +132,7 @@ function BookDetails({ book, isOpen, closeDetails }) {
         )}
      {/* space for a book price */}
         <Typography mt={1.5} mb={3.5}>
-          Price: {book.price} DKK
+          Price: {book?.price} DKK
         </Typography>
 
         <BuyBook />

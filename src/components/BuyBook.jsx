@@ -1,9 +1,11 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import ModalFormLayout from "./ModalFormLayout";
 import useFormDetails from "../hooks/useFormDetails";
+import { Link } from "react-router-dom";
+import { Info } from "@mui/icons-material";
 
 function BuyBook() {
   const [isBuyingBook, setIsBuyingBook] = useState(false);
@@ -72,6 +74,10 @@ function BuyBook() {
           />
           {/* a field to input user's payment ID */}
           <TextField
+            InputProps={{
+              endAdornment: (
+              <Link to="/about-us"><IconButton aria-label="Go to payment info page"><Info /></IconButton></Link>)
+            }}
             value={formDetails.paymentID}
             onChange={handleChange("paymentID")}
             label="Payment ID"
